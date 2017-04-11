@@ -76,8 +76,20 @@ h2 {
 		}	
 }
 
-
-
+@media screen and (min-width:1330px) {
+	.container {
+		max-width: 1230px;
+	}	
+	.item {
+		width: 300px;
+		}
+	.item:nth-child(odd) {
+		margin-right: 10px;	
+		}	
+	.item:nth-child(4n) {
+		margin-right: 0;	
+		}
+}
 
 
 .item-header {
@@ -86,9 +98,7 @@ h2 {
 
 .item-header:before {
 	counter-increment: section;
-	content: counter(section);
-	font-size: 2em;
-	padding-right: 10px;
+	content: counter(section) ". ";
 }
 
 .item-links, .item-links:active, .item-links:visited, {
@@ -101,4 +111,9 @@ h2 {
 .item-links:hover {
 	text-decoration: underline;
 }
+
+.page-header img {
+	width: 100%;
+}
+
 
