@@ -1,0 +1,13 @@
+/* Scss Document */
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item {
+	border: thin solid $mainColor;
+	margin-bottom: 10px;
+	width: 100%;
+
+}

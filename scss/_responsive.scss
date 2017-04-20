@@ -1,0 +1,46 @@
+/* Scss Document */
+
+
+@media screen and (min-width:768px) {
+	.container {
+		max-width: 748px;
+	}	
+	.item {
+		margin-bottom: 10px;
+		width: calc(50% - 5px);;
+		}
+	
+	.item:nth-child(odd) {
+		margin-right: 10px;	
+		}	
+}
+
+@media screen and (min-width:1020px) {
+	.container {
+		max-width: 920px;
+	}	
+	.item {
+		width: 300px;
+		}
+	.item:nth-child(even) {
+		margin-right: 10px;	
+		}	
+	.item:nth-child(3n) {
+		margin-right: 0;	
+		}	
+}
+
+@media screen and (min-width:1330px) {
+	.container {
+		max-width: 1230px;
+	}	
+	.item {
+		width: 300px;
+		}
+	.item:nth-child(odd) {
+		margin-right: 10px;	
+		}	
+	.item:nth-child(4n) {
+		margin-right: 0;	
+		}
+}

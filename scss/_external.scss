@@ -1,0 +1,27 @@
+/* Scss Document */
+
+.external-wrapper {
+	background-color: $mainColor;
+	height: 2em;
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	bottom: 0;
+	color: white;
+}
+
+
+.item-links, .item-links:active, .item-links:visited, {
+	color: white;
+	display: inline;
+	text-decoration: none;
+}
+
+.item-links:hover {
+	text-decoration: underline;
+}
+
+.item-links:nth-child(odd) {
+	margin-right: 20px;
+}
