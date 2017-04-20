@@ -1,37 +1,10 @@
 /* CSS Document */
 
-$mainColor: #2980b9;
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-    color: black;
-	counter-reset: section; 
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-}
-
-.container {
-	margin: 0 auto 0;
-	max-width: calc(100% - 20px);
-}
-
+@import "variables";
+@import "base";
 @import "text";
 @import "items";
 @import "icons";
 @import "inner-wrapper";
 @import "external";
-
-
 @import "responsive";
-
-
-
-
-
-
-
