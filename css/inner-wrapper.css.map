@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,cAAe,CACd,OAAO,CAAE,IAAI,CAGd,YAAa,CACZ,OAAO,CAAE,KAAK,CAGf,mBAAoB,CACnB,iBAAiB,CAAE,OAAO,CAC1B,OAAO,CAAE,qBAAqB",
-"sources": ["../scss/inner-wrapper.scss"],
-"names": [],
-"file": "inner-wrapper.css"
-}
