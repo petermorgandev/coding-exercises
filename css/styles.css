@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+a, a:hover, a:link, a:visited {
+	color: #4291dc;
+	text-decoration: none;
+}
+
+nav a, nav a:link, nav a:visited {
+	color: rgba(255,255,255,.5);
+}
+
+nav a:hover, nav a:focus {
+	color: white !important; 
+}
+
+.bg-darkgray {
+	background-color: #121212; 
+}
+
+.bg-black {
+	background-color: black;
+}
+
+.full-width-background-image {
+	width: 100%;
+}
+
+.mana.smed {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+hr { 
+	border:  0;
+	height: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
