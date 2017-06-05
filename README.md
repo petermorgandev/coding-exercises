@@ -1,4 +1,4 @@
-# Oloro-EDH
+# Oloro EDH
 Bootstrap v4 alpha site highlighting Oloro, Ageless Ascetic EDH decklist
 
 ## Resources used:
