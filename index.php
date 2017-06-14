@@ -69,7 +69,8 @@
 			"{RP}"   => "<i class='mana smallMana srp'></i>",
 			"{T}"    => "<i class='mana smallMana st'></i>",
 			"{Q}"    => "<i class='mana smallMana sq'></i>",
-			"{C}"    => "<i class='mana smallMana scl'></i>"
+			"{C}"    => "<i class='mana smallMana scl'></i>",
+			"{E}"    => "<i class='mana smallMana se'></i>"
 		);
 	?>
 	<div class="sidebar">
