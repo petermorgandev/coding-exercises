@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php
-		$url = 'https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&rarity=common';
+		$url = "https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&rarity=common";
 		$file= file_get_contents($url);	
 		$json = json_decode($file);
 		$json = $json->cards[0];
@@ -78,24 +78,26 @@
 		<p>This is a guessing game for Magic: The Gathering streamers. Fill dead air by providing your viewers with a fun guessing game. The game is configured to only show cards printed at common rarity.</p>
 		<p>To use the game in your stream crop the browser window to the black box in your streaming software. The card will be revealed in 1 minute. Refresh the browser for a new card.</p>
 		<p>Your card is...</p>
-
-		<p><img src ="<?php echo $cardImage ?>" alt="<?php echo $cardName = $json->name; ?>"></p>
+		<p><img src ="<?php echo $cardImage ?>" alt="<?php echo $cardName ?>"></p>
 	</div>
 	<div class="game">
-		<ul class=''>
-			<?php
+		<ul>
+			<li><img class="fade three" src="<?php echo $cardImage; ?>" alt="<?php echo $cardName ?>"</li>
+			<li class="fade"><strong>CMC:</strong> <?php 
 				$cardCMC = $json->cmc;
+				echo $cardCMC; 
+				?>
+			</li>
+			<li class="fade one"><strong>Type:</strong> <?php 
 				$cardType = $json->type; 
-			?>
-			<li class=''><img class='fade three' src="<?php echo $cardImage; ?>"</li>
-			<li class='fade '><strong>CMC:</strong> <?php echo $cardCMC; 
-				?> </li>
-			<li class='fade one'><strong>Type:</strong> <?php echo $cardType; ?> </li>
-			<li class='fade two' id="cost"><strong>Mana Cost:</strong> <?php
+				echo $cardType; 
+				?> 
+			</li>
+			<li class="fade two" id="cost"><strong>Mana Cost:</strong> <?php
 				$cardCost = strtr($json->manaCost, $replacements); 
 				echo $cardCost; ?> </li>					
-			<li class='fade three'><strong>Name:</strong> <?php echo  $cardName; ?> </li>
-			<li class='fade three'><strong>Text:</strong>  <?php 
+			<li class="fade three"><strong>Name:</strong> <?php echo  $cardName; ?> </li>
+			<li class="fade three"><strong>Text:</strong>  <?php 
 				$cardText = strtr($json->text, $replacements); 
 				echo $cardText; ?> </li>
 		</ul>
