@@ -10,7 +10,8 @@
 </head>
 <body>
 	<?php
-		$url = "https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&rarity=common";
+		$url = "https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&rarity=common&types=Artifact|Creature|Enchantment|Instant|Sorcery|Tribal";
+	
 		$file= file_get_contents($url);	
 		$json = json_decode($file);
 		$json = $json->cards[0];
