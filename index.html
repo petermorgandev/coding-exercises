@@ -32,7 +32,7 @@
 	</div>
 	<script>
 		$.getJSON('https://api.magicthegathering.io/v1/cards?pageSize=1&random=true&rarity=common&types=Artifact|Creature|Enchantment|Instant|Sorcery|Tribal', function(data){
-			$("#name").html("<strong>CMC:</strong> " + data.cards[0].name);
+			$("#name").html("<strong>Name:</strong> " + data.cards[0].name);
 			$("#cmc").html("<strong>CMC:</strong> " + data.cards[0].cmc);
 			$("#type").html("<strong>Type:</strong> " + data.cards[0].type);
 			$("img").attr("alt", data.cards[0].name).attr("src", data.cards[0].imageUrl);
