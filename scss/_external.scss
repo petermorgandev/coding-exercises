@@ -13,14 +13,10 @@
 }
 
 
-.item-links, .item-links:active, .item-links:visited, {
+.item-links, .item-links:active, .item-links:visited, .item-links:hover {
 	color: white;
 	display: inline;
 	text-decoration: none;
-}
-
-.item-links:hover {
-	text-decoration: underline;
 }
 
 .item-links:nth-child(odd) {
