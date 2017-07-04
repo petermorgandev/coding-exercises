@@ -1,6 +1,6 @@
 /* Scss Document */
 
-.external-wrapper {
+article footer {
 	background-color: $mainColor;
 	height: 2em;
 	padding-left: 15px;
@@ -13,12 +13,12 @@
 }
 
 
-.item-links, .item-links:active, .item-links:visited, .item-links:hover {
+a, a:active, a:visited, a:hover {
 	color: white;
 	display: inline;
 	text-decoration: none;
 }
 
-.item-links:nth-child(odd) {
+a:nth-child(odd) {
 	margin-right: 20px;
 }

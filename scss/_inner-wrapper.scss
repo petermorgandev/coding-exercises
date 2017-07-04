@@ -2,14 +2,15 @@
 
 .inner-wrapper {
 	padding: 15px;
-	
 }
 
-.item-header {
+.inner-wrapper header {
 	display: block;
+	font-size: 1.5em;
+	margin-bottom: 10px;
 }
 
-.item-header:before {
+.inner-wrapper header:before {
 	counter-increment: section;
 	content: counter(section) ". ";
 }

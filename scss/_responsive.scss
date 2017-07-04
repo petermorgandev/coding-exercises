@@ -5,12 +5,12 @@
 	.container {
 		max-width: 748px;
 	}	
-	.item {
+	article {
 		margin-bottom: 10px;
 		width: calc(50% - 5px);;
 		}
 	
-	.item:nth-child(odd) {
+	article:nth-child(odd) {
 		margin-right: 10px;	
 		}	
 }
@@ -19,11 +19,11 @@
 	.container {
 		max-width: 920px;
 	}	
-	.item {
+	article {
 		width: 455px;
 		}
 	
-	.item:nth-child(even) {
+	article:nth-child(even) {
 		margin-right: 0;	
 		}	
 }
@@ -32,15 +32,15 @@
 	.container {
 		max-width: 1220px;
 	}	
-	.item {
+	article {
 		width: 400px;
 	}
 	
-	.item:nth-child(2n) {
+	article:nth-child(2n) {
 		margin-right: 10px;	
 	}	
 	
-	.item:nth-child(3n) {
+	article:nth-child(3n) {
 		margin-right: 0;	
 	}
 
