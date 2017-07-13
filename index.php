@@ -6,7 +6,6 @@
 	<title>Pauper Card Guessing Game</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/styles.css" type="text/css">
-	<link rel="stylesheet" href="css/mana-cost.css" type="text/css">
 </head>
 <body>
 	<?php
