@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <title>Mixcloud Anniversary</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-6 push-md-3 mt-5">
+       <h1 class="mb-3">Mixcloud Anniversary</h1>
+       <p>Find the date when a Mixcloud.com account was created.</p>
+        <form class="mb-3">
+          <input class="form-control" type="text" placeholder="Type a Mixcloud.com username here." :value="usernameInput" @input="checkUsername">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 push-md-3" v-html="htmlOutput"></div>
+    </div>    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
