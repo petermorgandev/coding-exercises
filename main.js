@@ -1,5 +1,3 @@
-// JavaScript Document
-
 new Vue ({
   el: '#app',
   data: {
