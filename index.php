@@ -82,7 +82,7 @@
 	</div>
 	<div class="game">
 		<ul>
-			<li><img class="fade three" src="<?php echo $cardImage; ?>" alt="<?php echo $cardName ?>"</li>
+			<li><img class="fade three" src="<?php echo $cardImage; ?>" alt="<?php echo $cardName; ?>" /></li>
 			<li class="fade"><strong>CMC:</strong> <?php 
 				$cardCMC = $json->cmc;
 				echo $cardCMC; 
