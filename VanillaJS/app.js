@@ -1,5 +1,5 @@
-let getInput = document.getElementsByTagName('input');
-const getStrong = document.getElementsByTagName('strong')
+let getInput = document.getElementsByTagName('textarea');
+const getStrong = document.getElementsByTagName('span')
 
 function calculate() {
 	let innerInput =	getInput[0].value;
