@@ -83,23 +83,11 @@ $replacements = array(
 <div class="game">
   <ul>
     <li><img class="fade three" src="<?php echo $cardImage; ?>" alt="<?php echo $cardName; ?>" /></li>
-    <li class="fade"><strong>CMC:</strong> <?php 
-    $cardCMC = $json->cmc;
-    echo $cardCMC; 
-    ?>
-    </li>
-    <li class="fade one"><strong>Type:</strong> <?php 
-    $cardType = $json->type; 
-    echo $cardType; 
-    ?> 
-    </li>
-    <li class="fade two" id="cost"><strong>Mana Cost:</strong> <?php
-    $cardCost = strtr($json->manaCost, $replacements); 
-    echo $cardCost; ?> </li>					
+    <li class="fade"><strong>CMC:</strong> <?php echo $json->cmc; ?></li>
+    <li class="fade one"><strong>Type:</strong> <?php echo $json->type; ?></li>
+    <li class="fade two" id="cost"><strong>Mana Cost:</strong> <?php echo strtr($json->manaCost, $replacements); ?></li>					
     <li class="fade three"><strong>Name:</strong> <?php echo  $cardName; ?> </li>
-    <li class="fade three"><strong>Text:</strong>  <?php 
-    $cardText = strtr($json->text, $replacements); 
-    echo $cardText; ?> </li>
+    <li class="fade three"><strong>Text:</strong>  <?php echo strtr($json->text, $replacements); ?></li>
   </ul>
 </div>
 </body>
