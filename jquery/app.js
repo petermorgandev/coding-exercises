@@ -1,10 +1,10 @@
 let getInput = $('textarea');
-const getpan = $('span')
+const getspan = $('span')
 
 function calculate() {
-	let innerInput =	getInput[0].value;
+	let innerInput = getInput[0].value;
 	let calc = innerInput.length;
-	getpan.text(calc);
+	getspan.text(calc);
 	}
 
 getInput.on('input', calculate);
