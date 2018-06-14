@@ -1,43 +1,43 @@
 @media screen and (min-width:768px) {
-	.container {
-		max-width: 748px;
-	}	
-	article {
-		margin-bottom: 10px;
-		width: calc(50% - 5px);;
+  .container {
+    max-width: 748px;
+  }  
+  article {
+    margin-bottom: 10px;
+    width: calc(50% - 5px);;
   }
-	
-	article:nth-child(odd) {
-		margin-right: 10px;	
-  }	
+  
+  article:nth-child(odd) {
+    margin-right: 10px;  
+  }  
 }
 
 @media screen and (min-width:1020px) {
-	.container {
-		max-width: 920px;
-	}	
-	article {
-		width: 455px;
+  .container {
+    max-width: 920px;
+  }  
+  article {
+    width: 455px;
   }
-	
-	article:nth-child(even) {
-		margin-right: 0;	
-  }	
+  
+  article:nth-child(even) {
+    margin-right: 0;  
+  }  
 }
 
 @media screen and (min-width:1330px) {
-	.container {
-		max-width: 1220px;
-	}	
-	article {
-		width: 400px;
-	}
-	
-	article:nth-child(2n) {
-		margin-right: 10px;	
-	}	
-	
-	article:nth-child(3n) {
-		margin-right: 0;	
-	}
+  .container {
+    max-width: 1220px;
+  }  
+  article {
+    width: 400px;
+  }
+  
+  article:nth-child(2n) {
+    margin-right: 10px;  
+  }  
+  
+  article:nth-child(3n) {
+    margin-right: 0;  
+  }
 }

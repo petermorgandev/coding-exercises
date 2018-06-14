@@ -1,14 +1,14 @@
 .inner-wrapper {
-	padding: 15px;
+  padding: 15px;
 }
 
 .inner-wrapper header {
-	display: block;
-	font-size: 1.5em;
-	margin-bottom: 10px;
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .inner-wrapper header:before {
-	counter-increment: section;
-	content: counter(section) ". ";
+  counter-increment: section;
+  content: counter(section) ". ";
 }
