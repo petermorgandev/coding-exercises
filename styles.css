@@ -7,7 +7,13 @@
 #app {
   font-family: 'Raleway', sans-serif;  
   font-size: 36px;
-  max-width: 50%;
+  max-width: 60%;
+}
+
+@media (max-width: 1000px) {
+  #app {
+    max-width: 95%;
+  }
 }
 
 button {
