@@ -1,13 +1,65 @@
-#app {
-  max-width: 80%;
-  margin: 0 auto;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.d_block{
+#app {
+  font-family: 'Raleway', sans-serif;  
+  font-size: 36px;
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+button {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  color: white;
   display: block;
+  padding: 25px;
+  width: 100%;
+}
+
+button.defaultState {
+  background: linear-gradient(to bottom, #45484d 0%,#000000 100%);
+  border-color: #45484d;
+}
+
+button:not(.defaultState) {
+  background: linear-gradient(to bottom, #3d4044 0%,#000000 100%);
+  border-color: #3d4044;
+}
+
+h1 {
+  margin: 20px 0;
+  text-align: center;
+}
+
+input {
+  border-color: #aaa;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  display: block;
+  margin-bottom: 20px;
+  padding: 25px;
+  width: 100%;
+}
+
+input:focus {
+  border-color: black;
+}
+
+p {
+  height: 93px;
+  margin-bottom: 20px;
+  padding: 25px;
 }
 
 svg {
+  display: block;
+  margin: 0 auto 20px;
   height: 300px;
   width: 300px;
 }
