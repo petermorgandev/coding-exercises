@@ -7,18 +7,11 @@
 #app {
   font-family: 'Raleway', sans-serif;  
   font-size: 36px;
-  margin: 0 auto;
   max-width: 50%;
 }
 
 button {
-  border-radius: 5px;
-  border-style: solid;
-  border-width: thin;
   color: white;
-  display: block;
-  padding: 25px;
-  width: 100%;
 }
 
 button.defaultState {
@@ -32,34 +25,54 @@ button:not(.defaultState) {
 }
 
 h1 {
-  margin: 20px 0;
   text-align: center;
 }
 
 input {
   border-color: #aaa;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: thin;
-  display: block;
-  margin-bottom: 20px;
-  padding: 25px;
-  width: 100%;
 }
 
 input:focus {
   border-color: black;
+  outline: none;
 }
 
 p {
-  height: 93px;
-  margin-bottom: 20px;
-  padding: 25px;
+  min-height: 93px;
 }
 
 svg {
-  display: block;
-  margin: 0 auto 20px;
   height: 300px;
   width: 300px;
+}
+
+.border_base {
+  border-radius: 5px;  
+  border-style: solid;
+  border-width: thin;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display_block {
+  display: block;
+}
+
+.mb_20px {
+  margin-bottom: 20px;
+}
+
+.mt_20px {
+  margin-top: 20px;
+}
+
+.pad_25 {
+  padding: 25px;
+}
+
+.width_100 {
+  width: 100%;
 }
