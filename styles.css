@@ -42,7 +42,26 @@ p {
   min-height: 93px;
 }
 
+path {
+  fill-opacity:1;
+  fill-rule:nonzero;
+  stroke:none
+}
+
+#path24 {
+  fill:#292f33;
+}
+
+#path28 {
+  fill:#e1e8ed;
+}
+
+#path32 {
+  fill:#292f33;
+}
+
 svg {
+  enable-background:new 0 0 47.5 47.5;
   height: 300px;
   width: 300px;
 }
@@ -70,26 +89,8 @@ svg {
   margin-top: 20px;
 }
 
-.pad_25 {
+.pad_25px {
   padding: 25px;
-}
-
-path {
-  fill-opacity:1;
-  fill-rule:nonzero;
-  stroke:none
-}
-
-#path24 {
-  fill:#292f33;
-}
-
-#path28 {
-  fill:#e1e8ed;
-}
-
-#path32 {
-  fill:#292f33;
 }
 
 .width_100 {
