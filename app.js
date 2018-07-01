@@ -1,8 +1,9 @@
-let fb = [0, 1],
-  i;
+let i, fb = [0, 1];
 
 function displayValues(n) {
-  if (n === 1) {
+  if (n >= 50) {
+    return 'Please pick a number lower than 50';
+  } else if (n === 1) {
     return 0;
   } else {
     for (i = 2; i < n; i++) {
