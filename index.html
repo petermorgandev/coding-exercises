@@ -18,7 +18,7 @@
     <button type="submit" class="defaultState border_base display_block pad_25px width_100">Ask Your Question</button>
   </form>
   <div v-else>
-    <p class="mb_20px pad_25px">{{answers[Math.floor(Math.random() * this.answers.length)]}}</p>
+    <p class="mb_20px pad_25px">{{ randomAnswer() }}</p>
     <button type="submit" v-on:click="defaultState = true" class="border_base display_block pad_25px width_100">Ask Another Question</button>
   </div>
 </div>
