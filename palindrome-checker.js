@@ -1,7 +1,7 @@
 function palinCheck(x) {
   let y;
 
-  if (typeof x === 'undefined' || x === null || x === '') {
+  if (typeof x === 'undefined' || typeof x === null || typeof x === '') {
     return 'Sorry, but I need something to check. Please try again.';
   } else if (typeof x === 'string') {
     y = x.toLowerCase();
