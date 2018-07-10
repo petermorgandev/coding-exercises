@@ -8,5 +8,4 @@ largerNumber = (x, y) ->
   else 
      "#{y} is greater than #{x}";
 
-
 largerNumber(25, 10);
