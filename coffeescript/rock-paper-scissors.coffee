@@ -20,4 +20,4 @@ _d = (w, c) ->
 _p = (x) -> 
   _d(_u(x), _g())
 
-console.log _p("s");
+console.log _p("s")
