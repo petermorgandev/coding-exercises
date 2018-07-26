@@ -1,8 +1,8 @@
 function letterGrade(n) {
   if (n <= 100 && n >= 90) {
-    return "You got an A";
+    return "You got an A.";
   } else if (n <= 89 && n >= 80) {
-    return "You got a B";
+    return "You got a B.";
   } else if (n <= 79 && n >= 70) {
     return "You got a C.";
   } else if (n <= 69 && n >= 60) {
