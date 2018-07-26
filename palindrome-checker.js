@@ -1,5 +1,5 @@
 function palinCheck(x) {
-  let y;
+  let y, reversed;
 
   if (typeof x === "undefined" || x === null || x === "") {
     return "Sorry, but I need something to check. Please try again.";
@@ -9,7 +9,7 @@ function palinCheck(x) {
     y = x.toString();
   }
 
-  let reversed = y.split("").reverse().join("");
+  reversed = y.split("").reverse().join("");
 
   return y === reversed ? `${x} is the same forwards and backwards.` : `${x} is not the same forwards and backwards.`;
 }
