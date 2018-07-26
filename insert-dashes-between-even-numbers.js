@@ -9,7 +9,7 @@ function _x(y) {
       newArr.push(y[i]);
     }
   }
-  console.log(newArr.join().replace(/,/g, "").toString());
+   return newArr.join().replace(/,/g, "").toString();
 }
 
 _x(arr1);
