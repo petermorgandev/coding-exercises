@@ -1,20 +1,13 @@
 <?php
 
-function calc($x, $y, $z) {
-  if ($x === 'add') {
-    return $y + $z;
-  } elseif ($x === 'subtract') {
-    return $y - $z;
-  } elseif ($x === 'multiply') {
-    return $y * $z;
-  } elseif ($x === 'divide') {
-    return $y / $z;
-  }
-}
+function add($a, $b){ return $a + $b; }
+function subtract($c, $d){ return $c - $d; }
+function multiply($e, $f){ return $e * $f; }
+function divide($g, $h){ return $g / $h; }
 
-echo calc('add', 2, 3);
-echo calc('subtract', 6, 3);
-echo calc('multiply', 2, 3);
-echo calc('divide', 10, 5);
+echo add(2, 3);
+echo subtract(6, 3);
+echo multiply(2, 3);
+echo divide(10, 5);
 
 ?>
