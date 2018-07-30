@@ -4,15 +4,20 @@
   padding: 0;
 }
 
-#app {
-  font-family: 'Raleway', sans-serif;  
-  font-size: 36px;
-  max-width: 60%;
+body {
+  background-color: #6c5ce7;
 }
 
-@media (max-width: 1000px) {
+#app {
+  background-color: #eee;
+  font-family: 'Raleway', sans-serif;  
+  font-size: 36px;
+  max-width: 95%;
+}
+
+@media (min-width: 1000px) {
   #app {
-    max-width: 95%;
+    max-width: 65%;
   }
 }
 
@@ -33,15 +38,6 @@ button:not(.defaultState) {
 
 .text_center {
   text-align: center;
-}
-
-input {
-  border-color: #aaa;
-}
-
-input:focus {
-  border-color: black;
-  outline: none;
 }
 
 p {
@@ -76,6 +72,10 @@ svg {
   border-radius: 5px;  
   border-style: solid;
   border-width: thin;
+}
+
+.border_radius_5 {
+  border-radius: 5px;
 }
 
 .margin_center {
