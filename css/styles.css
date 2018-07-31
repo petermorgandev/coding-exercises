@@ -129,6 +129,6 @@ nav a:hover, nav a:focus {
 
 hr { 
   border:  0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 0;
 }
