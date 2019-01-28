@@ -7,5 +7,4 @@ function calculate() {
   getspan.text(calc);
   }
 
-
 getInput.on('input', calculate);
