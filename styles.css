@@ -13,6 +13,11 @@ body {
   font-family: 'Raleway', sans-serif;  
   font-size: 36px;
   max-width: 95%;
+	margin-left: auto;
+  margin-right: auto;
+	margin-top: 20px;
+	border-radius: 5px;
+	padding: 25px;
 }
 
 @media (min-width: 1000px) {
@@ -24,6 +29,11 @@ body {
 button {
   color: white;
   line-height: 41px;
+	border: thin solid;
+	border-radius: 5px;
+  display: block;
+	width: 100%;
+	padding: 25px;
 }
 
 button.defaultState {
@@ -36,12 +46,10 @@ button:not(.defaultState) {
   border-color: #3d4044;
 }
 
-.text_center {
-  text-align: center;
-}
-
 p {
   min-height: 93px;
+	padding: 25px;
+	margin-bottom: 20px;
 }
 
 path {
@@ -66,39 +74,13 @@ svg {
   enable-background:new 0 0 47.5 47.5;
   height: 300px;
   width: 300px;
-}
-
-.border_base {
-  border-radius: 5px;  
-  border-style: solid;
-  border-width: thin;
-}
-
-.border_radius_5 {
-  border-radius: 5px;
-}
-
-.margin_center {
-  margin-left: auto;
+	margin-left: auto;
   margin-right: auto;
+	display: block;
 }
 
-.display_block {
-  display: block;
-}
-
-.mb_20px {
+h1 {
   margin-bottom: 20px;
-}
-
-.mt_20px {
-  margin-top: 20px;
-}
-
-.pad_25px {
-  padding: 25px;
-}
-
-.width_100 {
-  width: 100%;
+	margin-top: 20px;
+	text-align: center;
 }

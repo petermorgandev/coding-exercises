@@ -1,5 +1,5 @@
 Vue.component('fancy-button', {
-  template: `<button class="border_base border_radius_5 display_block pad_25px width_100"><slot></slot></button>`
+  template: `<button><slot></slot></button>`
 });
 
 var vm = new Vue({
