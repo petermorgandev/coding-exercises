@@ -20,6 +20,6 @@ new Vue ({
           .get(`https://api.mixcloud.com/${this.usernameInput}/`)
           .then(response => this.dateOutput = response.data.created_time)
           .catch(error => this.errored = true)
-      }, 500)
+      }, 1000)
   }
 });
