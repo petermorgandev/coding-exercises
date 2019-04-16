@@ -19,9 +19,16 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 push-md-3" v-html="htmlOutput"></div>
-    </div>    
+    <div class="row" v-if="dateOutput">
+      <div class="col-md-6 push-md-3">
+        <div class="alert alert-success">That account was created on {{ htmlOutput }}.</div>
+      </div>
+    </div>
+    <div class="row" v-if="errored">
+      <div class="col-md-6 push-md-3">
+        <div class="alert alert-danger">Sorry, that username was not found. Please try another username.</div>
+      </div>
+    </div>  
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
