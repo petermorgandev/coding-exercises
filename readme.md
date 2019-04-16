@@ -5,7 +5,8 @@ Examples of valid usernames are `d`, `dj`, `djp`, `djpe`, `djpet`, `djpete`,`djp
 
 ## Resources used:
 
-  - [Bootstrap V4 Alpha](http://v4-alpha.getbootstrap.com/)
+  - [Bootstrap V4 Alpha](https://v4-alpha.getbootstrap.com/)
   - [Mixcloud API](https://www.mixcloud.com/developers/)
   - [Moment.js](https://momentjs.com/)
   - [Vue.js](https://vuejs.org/)
+  - [Axios.js](https://github.com/axios/axios)
