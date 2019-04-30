@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info">
       <a class="navbar-brand" href="#">Water Meter</a>
       <button
         class="navbar-toggler"
