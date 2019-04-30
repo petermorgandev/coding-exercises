@@ -29,11 +29,11 @@
           <option value="Washing Machine">Washing Machine</option>
         </select>
       </div>
-      <div>
+      <div v-if='count < 5' >
         <button v-on:click="addDeviceMethod" class="btn btn-primary">Submit</button>
       </div>
+      <div v-else><button class="btn btn-danger" disabled>Device Limit Reached</button></div>
     </form>
-    {{ floor}} {{ room}} {{ connectedTo}} {{count}}
   </div>
 </template>
 
