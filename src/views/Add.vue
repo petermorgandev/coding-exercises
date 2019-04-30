@@ -1,6 +1,5 @@
 <template>
   <div class="add">
-    <Navbar />
     <p>This is the add view</p>
     <form>
       <label for="">Device Name</label>
@@ -13,13 +12,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Navbar from '@/components/Navbar';
+
 
 export default {
   name: 'add',
   components: {
-    Navbar
+    
   
   },
   methods: {

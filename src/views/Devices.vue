@@ -1,6 +1,5 @@
 <template>
   <div class="devices">
-    <Navbar/>
     
     <router-view></router-view>
     <ul>
@@ -10,8 +9,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Navbar from "@/components/Navbar.vue";
 
 export default {
   computed: {
@@ -21,7 +18,7 @@ export default {
   },
   name: "devices",
   components: {
-    Navbar
+   
   }
 };
 </script>
