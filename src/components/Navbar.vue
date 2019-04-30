@@ -16,17 +16,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <router-link to="/" class="nav-link">Log In</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/devices" class="nav-link">Devices</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/add" class="nav-link">Add</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="devices/device/1" class="nav-link">Device 1</router-link>
+          <li class="nav-item" v-for="link in navbarLinks" v-bind:key="link.index">
+            <router-link :to="link.path" class="nav-link">{{link.text}}</router-link>
           </li>
         </ul>
       </div>
@@ -36,6 +27,15 @@
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  data() {
+    return {
+      navbarLinks: [
+        { path: "/", text: "Log In" },
+        { path: "/devices", text: "Devices" },
+        { path: "/add", text: "Add", icon: 'fa-plus' }
+      ]
+    };
+  }
 };
 </script>
