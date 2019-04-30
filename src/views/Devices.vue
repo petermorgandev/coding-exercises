@@ -3,7 +3,9 @@
     <Navbar/>
     
     <router-view></router-view>
-    this is after the router {{sharedState}}
+    <ul>
+      <li v-for='device in devices' v-bind:key='device.id'>{{device.name}} - {{device.location}} - {{device.type}}</li>
+    </ul>
   </div>
 </template>
 
@@ -12,14 +14,14 @@
 import Navbar from "@/components/Navbar.vue";
 
 export default {
+  computed: {
+    devices(){
+      return this.$store.state.devices;
+    }
+  },
   name: "devices",
   components: {
     Navbar
-  },
-  data() {
-    return {
-      device1: "test"
-    };
   }
 };
 </script>

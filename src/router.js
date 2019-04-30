@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Devices from './views/Devices.vue'
 import Login from './views/Login.vue'
 import Add from './views/Add.vue'
-import Device from './views/Device.vue'
+//import Device from './views/Device.vue'
 
 Vue.use(Router)
 
@@ -17,11 +17,7 @@ export default new Router({
     {
       path: '/devices',
       name: 'devices',
-      component: Devices,
-      children: [
-        {path: 'add', component: Add, name: 'add'},
-        {path: 'device/:id', component: Device, name: 'device'}
-      ]
+      component: Devices
     },
     {
       path: '/add',
