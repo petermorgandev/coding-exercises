@@ -1,8 +1,9 @@
 <template>
   <div class="device">
     <Navbar/>
-    <p>This is the device view for {{ $route.params.id }}</p>
-    <p>{{device1}}</p>
+    <p>Floor: {{deviceData.floor}}</p>
+    <p>Location: {{deviceData.location}}</p>
+    <p>Type: {{deviceData.type}}</p>
   </div>
 </template>
 
@@ -10,6 +11,11 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar";
 export default {
+  computed: {
+    deviceData() {
+      return this.$store.state.devices[this.$route.params.id - 1];
+    }
+  },
   name: "device",
   components: {
     Navbar
