@@ -3,36 +3,37 @@
     <Navbar/>
     <form>
       <div class="form-group">
-        <label for="floorInput">Floor:</label>
-        <select name="" id="floorInput" class="custom-select">
-          <option value="Basement">Basement</option>
+        <label for="floor">Floor:</label>
+        <select v-model="floor" id="floor" class="custom-select">
+          <option value="Basement" selected>Basement</option>
           <option value="Ground Floor">Ground Floor</option>
           <option value="Second Floor">Second Floor</option>
           <option value="Attic">Attic</option>
-          <option value="Outside">Outside</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="roomInput">Room:</label>
-        <select name="" id="roomInput" class="custom-select">
-          <option value="Bathroom">Bathroom</option>
+        <label for="room">Room:</label>
+        <select v-model="room" id="room" class="custom-select">
+          <option value="Bathroom" selected>Bathroom</option>
           <option value="Garage">Garage</option>
           <option value="Kitchen">Kitchen</option>
           <option value="Laundry Room">Laundry Room</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="connectedToInput">Connected to:</label>
-        <select name="" id="connectedToInput" class="custom-select">
-          <option value="Shower">Shower</option>
+        <label for="connectedTo">Connected to:</label>
+        <select v-model="connectedTo" id="connectedTo" class="custom-select">
+          <option value="Shower" selected>Shower</option>
           <option value="Sink">Sink</option>
           <option value="Toilet">Toilet</option>
           <option value="Washing Machine">Washing Machine</option>
         </select>
       </div>
-
-      <button v-on:click="addDevice" class="btn btn-primary">Submit</button>
+      <div>
+        <button v-on:click="addDeviceMethod" class="btn btn-primary">Submit</button>
+      </div>
     </form>
+    {{ floor}} {{ room}} {{ connectedTo}} {{count}}
   </div>
 </template>
 
@@ -44,9 +45,26 @@ export default {
   components: {
     Navbar
   },
+  data() {
+    return {
+      floor: "Basement",
+      room: "Bathroom",
+      connectedTo: "Shower"
+    };
+  },
+  computed: {
+    count() {
+      return this.$store.state.deviceCount;
+    }
+  },
   methods: {
-    addDevice: function() {
-      this.$store.dispatch("addDevice");
+    addDeviceMethod: function() {
+      this.$store.dispatch("addDeviceAction", {
+        id: this.count,
+        floor: this.floor,
+        room: this.room,
+        connectedTo: this.connectedTo
+      });
     }
   }
 };
