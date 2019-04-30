@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Devices from './views/Devices.vue'
+import Device from './views/Device.vue'
 import Login from './views/Login.vue'
 import Add from './views/Add.vue'
 //import Device from './views/Device.vue'
@@ -25,12 +26,9 @@ export default new Router({
       component: Add
     },
     {
-      path: '/devices/1',
+      path: '/device/:id',
       name: 'device',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Device.vue')
+      component: Device
     }
   ]
 })
