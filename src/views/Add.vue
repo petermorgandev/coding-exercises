@@ -1,19 +1,26 @@
 <template>
   <div class="add">
-    <Navbar />
     <p>This is the add view</p>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <form>
+      <label for="">Device Name</label>
+
+      <input type="text">
+
+      <button v-on:click='addDevice'>Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
 
 export default {
   name: 'add',
   components: {
-    Navbar
+  
+  },
+  methods: {
+
   }
 }
 </script>
