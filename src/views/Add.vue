@@ -1,13 +1,37 @@
 <template>
   <div class="add">
     <Navbar/>
-    <p>This is the add view</p>
     <form>
-      <label for>Device Name</label>
+      <div class="form-group">
+        <label for="floorInput">Floor:</label>
+        <select name="" id="floorInput" class="custom-select">
+          <option value="Basement">Basement</option>
+          <option value="Ground Floor">Ground Floor</option>
+          <option value="Second Floor">Second Floor</option>
+          <option value="Attic">Attic</option>
+          <option value="Outside">Outside</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="roomInput">Room:</label>
+        <select name="" id="roomInput" class="custom-select">
+          <option value="Bathroom">Bathroom</option>
+          <option value="Garage">Garage</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Laundry Room">Laundry Room</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="connectedToInput">Connected to:</label>
+        <select name="" id="connectedToInput" class="custom-select">
+          <option value="Shower">Shower</option>
+          <option value="Sink">Sink</option>
+          <option value="Toilet">Toilet</option>
+          <option value="Washing Machine">Washing Machine</option>
+        </select>
+      </div>
 
-      <input type="text">
-
-      <button v-on:click="addDevice">Submit</button>
+      <button v-on:click="addDevice" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </template>
