@@ -6,8 +6,8 @@
           <img alt="Vue logo" src="../assets/pipe.svg" class="mt-5 mb-5">
           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
           <form>
-            <input type="text" name="" id="" placeholder="Username" class="form-control">
-            <input type="password" name="" id="" placeholder="Password" class="form-control mb-3">
+            <input type="text" placeholder="Username" class="form-control">
+            <input type="password" placeholder="Password" class="form-control mb-3">
             <a href="#/devices" class="btn btn-lg btn-primary btn-block">Log In</a>
           </form>
         </div>
