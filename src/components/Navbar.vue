@@ -1,25 +1,16 @@
 <template>
-  <div>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-custom">
-      <a class="navbar-brand" href="#">Water Meter</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item" v-for="link in navbarLinks" v-bind:key="link.index">
-            <router-link :to="link.path" class="nav-link">{{link.text}}</router-link>
-          </li>
-        </ul>
+  <div class="bg-custom">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container">
+        <img src="../assets/pipe.svg" width="30" height="30" alt="logo" class="navbar-brand">
+        <div class="navbar-nav mr-auto">
+          <router-link
+            v-for="link in navbarLinks"
+            :to="link.path"
+            v-bind:key="link.index"
+            class="nav-link nav-item"
+          >{{link.text}}</router-link>
+        </div>
       </div>
     </nav>
   </div>
@@ -31,9 +22,8 @@ export default {
   data() {
     return {
       navbarLinks: [
-        { path: "/", text: "Log In" },
         { path: "/devices", text: "Devices" },
-        { path: "/add", text: "Add", icon: 'fa-plus' }
+        { path: "/add", text: "Add", icon: "fa-plus" }
       ]
     };
   }
