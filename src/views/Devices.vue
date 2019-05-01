@@ -10,7 +10,7 @@
       <div class="row bg-white">
         <div v-if="count === 0">
           <div class="col">
-            <h3>You have not added any devices.</h3> 
+            <h3>You have not added any devices.</h3>
           </div>
         </div>
         <div class="col-4 mb-4" v-for="device in devices" v-bind:key="device.id">
