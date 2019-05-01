@@ -13,7 +13,7 @@
             <h3>You have not added any devices.</h3>
           </div>
         </div>
-        <div class="col-4 mb-4" v-for="device in devices" v-bind:key="device.id">
+        <div class="col-lg-4 col-md-6 mb-4" v-for="device in devices" v-bind:key="device.id">
           <div class="card shadow-sm">
             <div class="card-body">
               <ul class="list-group mb-3 list-group-flush">
