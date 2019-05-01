@@ -3,25 +3,25 @@
     <Navbar/>
     <div class="container bg-white">
       <div class="row py-4">
-        <div class="col">
+        <div class="col-sm-12">
           <h1>Device Info</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-sm-12">
           <p>Floor: {{deviceData.floor}}</p>
           <p>Room: {{deviceData.room}}</p>
           <p>Connected To: {{deviceData.connectedTo}}</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-sm-12">
           <h2>Weekly Usage</h2>
           <chartist type="Line" ratio="ct-major-twelfth" :data="chartData" :options="chartOptions"></chartist>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-sm-12">
           <h2>Monthly Usage</h2>
           <table class="table table-sm">
             <thead>
