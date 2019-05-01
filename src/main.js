@@ -4,6 +4,7 @@ import router from './router'
 import store from './store/store'
 require('./assets/style.css')
 
+Vue.use(require('vue-chartist'))
 Vue.config.productionTip = false
 
 new Vue({
