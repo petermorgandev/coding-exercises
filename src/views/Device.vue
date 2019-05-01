@@ -9,15 +9,15 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <p>Floor: {{deviceData.floor}}</p>
-          <p>Room: {{deviceData.room}}</p>
-          <p>Connected To: {{deviceData.connectedTo}}</p>
+          <p><strong>Floor:</strong> {{deviceData.floor}}</p>
+          <p><strong>Room:</strong> {{deviceData.room}}</p>
+          <p><strong>Connected To:</strong> {{deviceData.connectedTo}}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
           <h2>Weekly Usage</h2>
-          <chartist type="Line" ratio="ct-major-twelfth" :data="chartData" :options="chartOptions"></chartist>
+          <chartist type="Line" ratio="ct-major-twelfth" :data="chartData" :options="chartOptions" class="mb-4"></chartist>
         </div>
       </div>
       <div class="row">
@@ -55,7 +55,7 @@ export default {
       fakeData: this.$store.state.fakeData[this.$route.params.id],
       chartData: {
         labels: ["A", "B", "C", "d", "e", "f"],
-        series: [[5, 4, 5, 1, 3, 2]]
+        series: [this.$store.state.fakeData[this.$route.params.id].chartData]
       },
       chartOptions: {
         lineSmooth: true,

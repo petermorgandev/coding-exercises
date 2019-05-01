@@ -17,12 +17,12 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <ul class="list-group mb-3 list-group-flush">
-                <li class="list-group-item">Floor: {{device.floor}}</li>
-                <li class="list-group-item">Room: {{device.room}}</li>
+                <li class="list-group-item"><strong>Floor:</strong> {{device.floor}}</li>
+                <li class="list-group-item"><strong>Room:</strong> {{device.room}}</li>
                 <li
                   class="list-group-item"
                   style="border-bottom:none"
-                >Connected To: {{device.connectedTo}}</li>
+                ><strong>Connected To:</strong> {{device.connectedTo}}</li>
               </ul>
               <div class="d-flex justify-content-between align-items-center">
                 <a
