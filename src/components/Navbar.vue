@@ -1,6 +1,6 @@
 <template>
   <div class="bg-custom">
-    <nav class="navbar navbar-expand-sm navbar-dark">
+    <nav class="navbar navbar-expand navbar-dark">
       <div class="container">
         <span class="navbar-brand">
           <img src="../assets/pipe.svg" width="30" height="30" alt="logo"> Water Meter
@@ -31,3 +31,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.navbar-dark .navbar-nav > .router-link-active {
+  color: white;
+}
+</style>
