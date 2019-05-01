@@ -2,7 +2,9 @@
   <div class="bg-custom">
     <nav class="navbar navbar-expand-sm navbar-dark">
       <div class="container">
-        <img src="../assets/pipe.svg" width="30" height="30" alt="logo" class="navbar-brand">
+        <span class="navbar-brand">
+          <img src="../assets/pipe.svg" width="30" height="30" alt="logo"> Water Meter
+        </span>
         <div class="navbar-nav mr-auto">
           <router-link
             v-for="link in navbarLinks"
