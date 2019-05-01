@@ -42,6 +42,13 @@ export default new Vuex.Store({
         tableData: [
           { month: 'April', usage: 5, change: 'down' }, { month: 'March', usage: 6, change: 'down' }, { month: 'February', usage: 8, change: 'down' }, { month: 'January', usage: 9, change: 'Device Installed' }
         ]
+      },
+      {
+        id: 5,
+        chart: 'chart',
+        tableData: [
+          { month: 'April', usage: 7, change: 'down' }, { month: 'March', usage: 8, change: 'down' }, { month: 'February', usage: 9, change: 'down' }, { month: 'January', usage: 12, change: 'Device Installed' }
+        ]
       }
     ]
   },

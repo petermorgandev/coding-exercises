@@ -36,7 +36,7 @@
               <option value="Washing Machine">Washing Machine</option>
             </select>
           </div>
-          <div v-if="count < 5">
+          <div v-if="count < 6">
             <button v-on:click="addDeviceMethod" class="btn btn-custom mb-4">Submit</button>
           </div>
           <div v-else>
