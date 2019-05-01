@@ -1,0 +1,21 @@
+body {
+  background-color:  #447784;
+  height: 100%;
+}
+
+.bg-custom {
+  background-color: #012B35;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: #012B35;
+  border-color: #012B35;
+}
+
+.btn-custom:hover {
+  color: #fff;
+  background-color: #0F434F;
+  border-color: #012B35;
+}
+

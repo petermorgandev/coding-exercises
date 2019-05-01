@@ -3,13 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <img alt="Vue logo" src="../assets/pipe.svg" class="mt-5 mb-5">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <form>
-            <input type="text" placeholder="Username" class="form-control">
-            <input type="password" placeholder="Password" class="form-control mb-3">
-            <a href="#/devices" class="btn btn-lg btn-primary btn-block">Log In</a>
-          </form>
+          <div class="loginBox mt-5 pt-5 px-3">
+            <img alt="logo" src="../assets/pipe.svg" class="mb-5">
+            <h1 class="h3 mb-4 font-weight-normal">Please sign in</h1>
+            <form class="p-3">
+              <input type="text" placeholder="Username" class="form-control">
+              <input type="password" placeholder="Password" class="form-control mb-4">
+              <a href="#/add" class="btn btn-lg btn-custom btn-block">Log In</a>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -23,15 +25,18 @@ export default {
 </script>
 
 <style scoped>
-  form {
-    width: 100%;
-    max-width: 350px;
-    margin: auto;
-    padding: 20px;
-  }
+form {
+  width: 100%;
+}
 
-  img {
-    width: 200px;
-    height: 200px;
-  }
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.loginBox {
+  background-color: white;
+  max-width: 350px;
+  margin: auto;
+}
 </style>
