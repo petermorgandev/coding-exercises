@@ -3,17 +3,17 @@
     <Navbar/>
     <div class="container bg-white">
       <div class="row py-4">
-        <div class="col">
+        <div class="col-sm-12">
           <h1>Connected Devices</h1>
         </div>
       </div>
-      <div class="row bg-white">
+      <div class="row">
         <div v-if="count === 0">
-          <div class="col">
+          <div class="col-sm-12">
             <h3>You have not added any devices.</h3>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4" v-for="device in devices" v-bind:key="device.id">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4" v-for="device in devices" v-bind:key="device.id">
           <div class="card shadow-sm">
             <div class="card-body">
               <ul class="list-group mb-3 list-group-flush">
