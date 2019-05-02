@@ -39,7 +39,7 @@
                   :href="`#/device/${device.id}`"
                   class="card-link btn btn-lg btn-custom"
                 >Device Info</a>
-                <small class="text-success">Connected</small>
+                <span class="text-success">Connected</span>
               </div>
             </div>
           </div>
