@@ -72,11 +72,11 @@ import Navbar from "@/components/Navbar";
 export default {
   data() {
     return {
-      deviceData: this.$store.state.devices[this.$route.params.id],
-      fakeData: this.$store.state.fakeData[this.$route.params.id],
+      deviceData: null,
+      fakeData: null,
       chartData: {
         labels: ["A", "B", "C", "d", "e", "f"],
-        series: [this.$store.state.fakeData[this.$route.params.id].chartData]
+        series: null
       },
       chartOptions: {
         lineSmooth: true,
@@ -91,6 +91,17 @@ export default {
   name: "device",
   components: {
     Navbar
+  },
+  created() {
+    this.getData()
+  },
+  methods: {
+    getData(){
+      this.deviceData = this.$store.state.devices[this.$route.params.id];
+      this.fakeData = this.$store.state.fakeData[this.$route.params.id];
+      this.chartData.series = [this.$store.state.fakeData[this.$route.params.id].chartData];
+
+    }
   }
 };
 </script>
