@@ -37,7 +37,7 @@
             </select>
           </div>
           <div v-if="count < 6">
-            <button v-on:click="addDeviceMethod" class="btn btn-custom mb-4">Submit</button>
+            <button v-on:click.prevent="addDeviceMethod" class="btn btn-custom mb-4">Submit</button>
           </div>
           <div v-else>
             <button class="btn btn-danger mb-4" disabled>Device Limit Reached</button>
