@@ -93,14 +93,15 @@ export default {
     Navbar
   },
   created() {
-    this.getData()
+    this.getData();
   },
   methods: {
-    getData(){
+    getData() {
       this.deviceData = this.$store.state.devices[this.$route.params.id];
       this.fakeData = this.$store.state.fakeData[this.$route.params.id];
-      this.chartData.series = [this.$store.state.fakeData[this.$route.params.id].chartData];
-
+      this.chartData.series = [
+        this.$store.state.fakeData[this.$route.params.id].chartData
+      ];
     }
   }
 };

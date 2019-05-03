@@ -4,7 +4,10 @@
     <div class="container bg-white">
       <div class="row py-4">
         <div class="col">
-          <h1>Add New Device <small class="text-muted">{{count}}/6 devices connected</small></h1>
+          <h1>
+            Add New Device
+            <small class="text-muted">{{count}}/6 devices connected</small>
+          </h1>
         </div>
       </div>
       <div class="row">
