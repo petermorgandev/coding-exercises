@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/register">Register</router-link>
-    </div>
+    <Navbar/>
     <div class="container">
       <router-view/>
     </div>
   </div>
 </template>
 
-<style>
+<script>
+  import Navbar from '@/components/Navbar'
+  
+  // @ is an alias to /src
+  export default {
+    components: {
+      Navbar
+    }
+  }
+</script>
 
+<style>
 </style>
