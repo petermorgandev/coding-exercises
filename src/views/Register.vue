@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <form action="/register" method="POST">
+        <form>
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -28,8 +28,13 @@
               class="form-control"
             >
           </div>
-          <div class="form-group"></div>
-          <button class="btn btn-primary" @click="register">Register</button>
+          <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <select name="avatarInput" v-model="avatarInput" id="avatar" class="form-control">
+              <option v-for="avatar in avatarOptions" v-bind:key="avatar.index">{{avatar}}</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" @click.prevent="register">Register</button>
         </form>
       </div>
     </div>
@@ -42,6 +47,18 @@ import AuthenticationService from "@/services/AuthenticationService";
 export default {
   data() {
     return {
+      avatarOptions: [
+        "coolshades",
+        "donut",
+        "drums",
+        "gnome",
+        "plumber",
+        "robot",
+        "rugby",
+        "sailboat",
+        "skier",
+        "superhero"
+      ],
       usernameInput: "",
       passwordInput: "",
       avatarInput: "coolshades"
