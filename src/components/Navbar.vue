@@ -50,4 +50,7 @@ export default {
 </script>
 
 <style>
+.navbar-dark .navbar-nav > .router-link-active {
+  color: white;
+}
 </style>
