@@ -1,13 +1,38 @@
 <template>
   <div>
-    <h1>Register</h1>
-    <input type="text" name="username" placeholder v-model="usernameInput">
-    <br>
-    <input type="password" name="password" id v-model="passwordInput">
-    <br>
-    <input type="text" name id v-model="avatarInput">
-    <br>
-    <button @click="register">Register</button>
+    <div class="row">
+      <div class="col">
+        <h3 class="mt-4">Register</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your desired username"
+              v-model="usernameInput"
+              class="form-control"
+            >
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your desired password"
+              v-model="passwordInput"
+              class="form-control"
+            >
+          </div>
+          <div class="form-group"></div>
+          <button class="btn btn-primary" @click="register">Register</button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,14 +54,14 @@ export default {
           usernameInput: this.usernameInput,
           passwordInput: this.passwordInput,
           avatarInput: this.avatarInput
-        })
+        });
       } catch (error) {
         this.error = error.response.data.error;
       }
     }
   }
-}
+};
 </script>
 
-<style scoped>
+<style>
 </style>
