@@ -67,11 +67,13 @@ export default {
   methods: {
     async register() {
       try {
-        await AuthenticationService.register({
+        const response = await AuthenticationService.register({
           usernameInput: this.usernameInput,
           passwordInput: this.passwordInput,
           avatarInput: this.avatarInput
         });
+        this.$store.dispatch("setUser", response.data);
+        this.$router.push({ name: "home" });
       } catch (error) {
         this.error = error.response.data.error;
       }
