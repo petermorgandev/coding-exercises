@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <form action="/login" method="POST">
+        <form>
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -29,7 +29,7 @@
             >
           </div>
           <div class="form-group"></div>
-          <button class="btn btn-primary" @click="login">Log In</button>
+          <button class="btn btn-primary" @click.prevent="login">Log In</button>
         </form>
       </div>
     </div>
@@ -47,13 +47,14 @@ export default {
     };
   },
   methods: {
-    async register() {
+    async login() {
       try {
-        await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           usernameInput: this.usernameInput,
           passwordInput: this.passwordInput,
-          avatarInput: this.avatarInput
         });
+        this.$store.dispatch('setUser', response.data);
+        this.$router.push({ name: 'home' });
       } catch (error) {
         this.error = error.response.data.error;
       }
