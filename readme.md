@@ -1,5 +1,5 @@
 # Mixcloud Anniversary
-This is a single page website that tells you the date when an account was created on [Mixcloud.com](https://www.mixcloud.com).
+This single page that tells you the date when an account was created on [Mixcloud.com](https://www.mixcloud.com). It Vue.js as a front end frame work with styling by Bootstrap and Axios to fetch data from the Mixcloud API. Moment.js presents the returned date in a more readable format.
 
 Examples of valid usernames are `d`, `dj`, `djp`, `djpe`, `djpet`, `djpete`,`djpeter`, `djpetermorgan`.
 
@@ -9,4 +9,4 @@ Examples of valid usernames are `d`, `dj`, `djp`, `djpe`, `djpet`, `djpete`,`djp
   - [Mixcloud API](https://www.mixcloud.com/developers/)
   - [Moment.js](https://momentjs.com/)
   - [Vue.js](https://vuejs.org/)
-  - [Axios.js](https://github.com/axios/axios)
+  - [Axios](https://github.com/axios/axios)
