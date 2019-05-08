@@ -10,3 +10,4 @@ Examples of valid usernames are `d`, `dj`, `djp`, `djpe`, `djpet`, `djpete`,`djp
   - [Moment.js](https://momentjs.com/)
   - [Vue.js](https://vuejs.org/)
   - [Axios](https://github.com/axios/axios)
+  - [Lodash](https://lodash.com/)
