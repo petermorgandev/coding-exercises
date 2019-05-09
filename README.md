@@ -4,6 +4,13 @@
 
 ## Table of Contents
 
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installing](#installing)
+  - [Technologies](#technologies)
+  - [Acknowledgments](#acknowledgments)
+
 ## Features
 * User registration and authentication
 * Registered users can view all messages and individual user profiles
