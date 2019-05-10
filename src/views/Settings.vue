@@ -30,7 +30,7 @@
           <h4 class="mb-3">Danger Zone</h4>
           <p>These options are irreversible!</p>
           <a
-            :href="`/api/delete/messages/${$store.state.user}`"
+            @click.prevent="deleteAllMessages()" href="#"
             class="btn btn-danger"
           >Delete All Messages</a>&nbsp;
           <a
@@ -78,6 +78,22 @@ export default {
           data
         );
         this.$router.push({ name: "home" });
+      } catch (error) {
+        this.error = error.response.data.error;
+      }
+    },
+    async deleteAllMessages(){
+        try {
+        await AuthenticationService.deleteAllMessages(this.$store.state.user);
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        this.error = error.response.data.error;
+      }
+    },
+    async deleteUser(){
+        try {
+        await AuthenticationService.deleteUser(this.$store.state.user);
+        this.$router.push({ name: 'home' });
       } catch (error) {
         this.error = error.response.data.error;
       }

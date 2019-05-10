@@ -22,8 +22,8 @@ export default {
     return Api().delete(`/delete/message/${messageId}`)
   },
 
-  deleteAllMessages(userId){
-    return Api().delete(`/delete/messages/${userId}`)
+  deleteAllMessages(user){
+    return Api().delete(`/delete/messages/${user}/`)
   },
 
   deleteUser(userId){
