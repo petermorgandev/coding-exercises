@@ -2,6 +2,7 @@
 
 ## 5/9/19
 * New wessages can be submitted (if sent with a user ID)
+* Users can now delete their account
 * Users can now delete their own messages
 * Users can now update their profile settings
 * Users can now log out
