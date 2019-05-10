@@ -1,5 +1,10 @@
 # Changes
 
+## 5/9/19
+* New wessages can be submitted (if sent with a user ID)
+* Users can now update their profile settings
+* Users can now log out
+
 ## 5/7/19
 * Added moment via npm
 * Home and Profile views now display messages

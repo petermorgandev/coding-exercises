@@ -40,5 +40,9 @@ export default {
   
   login(credentials) {
     return Api().post('/login', credentials)
+  },
+  
+  logOut(credentials) {
+    return Api().get('/logout', credentials)
   }
 }
