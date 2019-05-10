@@ -72,9 +72,12 @@ export default {
       }
     }
   },
-  created() {
-    this.usernameInput = this.$store.state.user.username;
-    this.avatarInput = this.$store.state.user.avatar;
-    },
+  async created() {
+    const user = await AuthenticationService.getUserSettings(this.$store.state.user);
+    const { username, avatar } = user.data[0];
+    this.avatarInput = avatar;
+    this.usernameInput = username;
+
+  }
 };
 </script>
