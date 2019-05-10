@@ -53,7 +53,7 @@ export default {
           usernameInput: this.usernameInput,
           passwordInput: this.passwordInput,
         });
-        this.$store.dispatch('setUser', response.data);
+        this.$store.dispatch('setUser', response.data.id);
         this.$router.push({ name: 'home' });
       } catch (error) {
         this.error = error.response.data.error;
