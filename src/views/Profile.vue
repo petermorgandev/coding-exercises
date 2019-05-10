@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col">
         <h3 class="mt-4">
-          {{user.data[0].username}}'s Profile
-          <small v-if="messages.data.length === 1">{{messages.data.length}} Message</small>
-          <small v-else>{{messages.data.length}} Messages</small>
+          {{user}}'s Profile
+          <small v-if="messageCount === 1">{{messageCount}} Message</small>
+          <small v-else>{{messageCount}} Messages</small>
         </h3>
       </div>
     </div>
@@ -38,6 +38,7 @@ export default {
     return {
       loggedIn: this.$store.state.isUserLoggedIn,
       user: '',
+      messageCount: '',
       messages: []
     };
   },
@@ -46,9 +47,11 @@ export default {
   },
   methods: {
     getData: async function(){
-      this.messages = await AuthenticationService.getUserMessages(this.$route.params.userId);
-  
-      this.user = await AuthenticationService.getUserSettings(this.$route.params.userId);
+      const messages = await AuthenticationService.getUserMessages(this.$route.params.userId);
+      this.messageCount = messages.data.length;
+      this.messages = messages;
+      const userData = await AuthenticationService.getUserSettings(this.$route.params.userId);
+      this.user = userData.data[0].username;
     }
   },
   watch: {
