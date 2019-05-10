@@ -41,10 +41,20 @@ export default {
       messages: []
     };
   },
-  async created() {
-    this.messages = await AuthenticationService.getUserMessages(this.$route.params.userId);
+  async created(){
+    this.getData();
+  },
+  methods: {
+    getData: async function(){
+      this.messages = await AuthenticationService.getUserMessages(this.$route.params.userId);
   
-    this.user = await AuthenticationService.getUserSettings(this.$route.params.userId);
-    },
+      this.user = await AuthenticationService.getUserSettings(this.$route.params.userId);
+    }
+  },
+  watch: {
+    '$route.params.userId': function(){
+      this.getData();
+    }
+    }
 };
 </script>
