@@ -27,8 +27,8 @@
       <div class="col border border-danger rounded-lg py-3">
         <h4 class="mb-3">Danger Zone</h4>
         <p>These options are irreversible!</p>
-        <a href="/api/delete/messages/userid" class="btn btn-danger">Delete ALL Messages</a> &nbsp;
-        <a href="/api/delete/user/userid" class="btn btn-danger">Delete Acount</a>
+        <a :href="`/api/delete/messages/${$store.state.user}`" class="btn btn-danger">Delete ALL Messages</a> &nbsp;
+        <a :href="`/api/delete/user/${$store.state.user}`" class="btn btn-danger">Delete Acount</a>
       </div>
     </div>
     {{user}}
