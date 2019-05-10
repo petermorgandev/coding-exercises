@@ -34,7 +34,7 @@
             class="btn btn-danger"
           >Delete All Messages</a>&nbsp;
           <a
-            :href="`/api/delete/user/${$store.state.user}`"
+            @click.prevent="deleteUser()" href="#"
             class="btn btn-danger"
           >Delete Account</a>
         </div>
@@ -92,8 +92,11 @@ export default {
     },
     async deleteUser(){
         try {
+        await AuthenticationService.logOut();
         await AuthenticationService.deleteUser(this.$store.state.user);
-        this.$router.push({ name: 'home' });
+        this.$store.state.user = "";
+        this.$store.state.isUserLoggedIn = false;
+        this.$router.push({ name: 'index' });
       } catch (error) {
         this.error = error.response.data.error;
       }
