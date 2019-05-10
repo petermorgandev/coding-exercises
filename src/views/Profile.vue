@@ -20,8 +20,8 @@
               class="mr-3"
             >
             <div class="media-body">
-              <h5 class="mt-0 mb-1">{{message.message}}</h5>Posted by
-              <a :href="'#/profile/' + message.user._id">@{{message.user.username}}</a>&nbsp;<span :title="moment(message.date).format('MMMM D, YYYY h:mma')">{{moment(message.date).fromNow()}}</span>
+              <h5 class="mt-0 mb-1">{{message.message}}</h5>Posted <span v-if='!currentUser'>by
+              <a :href="'#/profile/' + message.user._id">@{{message.user.username}}</a>&nbsp;</span><span :title="moment(message.date).format('MMMM D, YYYY h:mma')">{{moment(message.date).fromNow()}}</span>&nbsp;<a v-if='currentUser' class='badge badge-danger' href="">Delete</a>
             </div>
           </li>
         </ul>
@@ -38,11 +38,13 @@ export default {
       loggedIn: this.$store.state.isUserLoggedIn,
       user: '',
       messageCount: '',
-      messages: []
+      messages: [],
+      currentUser: false
     };
   },
   async created(){
     this.getData();
+    this.getCurrentUser();
   },
   methods: {
     getData: async function(){
@@ -51,11 +53,17 @@ export default {
       this.messages = messages;
       const userData = await AuthenticationService.getUserSettings(this.$route.params.userId);
       this.user = userData.data[0].username;
+    },
+    getCurrentUser: function(){
+      if (this.$route.params.userId === this.$store.state.user){
+        this.currentUser = true;
+      }
     }
   },
   watch: {
     '$route.params.userId': function(){
       this.getData();
+      this.getCurrentUser();
     }
     }
 };
