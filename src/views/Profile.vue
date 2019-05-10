@@ -38,7 +38,7 @@ export default {
     return {
       loggedIn: this.$store.state.isUserLoggedIn,
       user: '',
-      messages: ''
+      messages: []
     };
   },
   async created() {
