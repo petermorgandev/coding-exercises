@@ -20,7 +20,7 @@
                 <option v-for="avatar in avatarOptions" v-bind:key="avatar.index">{{avatar}}</option>
               </select>
             </div>
-            <button class="btn btn-primary" @click.prevent="updateUserSettings">Update</button>
+            <button class="btn btn-success" @click.prevent="updateUserSettings">Update</button>
           </form>
         </div>
       </div>
@@ -31,11 +31,11 @@
           <p>These options are irreversible!</p>
           <a
             @click.prevent="deleteAllMessages()" href="#"
-            class="btn btn-danger"
+            class="btn btn-outline-danger"
           >Delete All Messages</a>&nbsp;
           <a
             @click.prevent="deleteUser()" href="#"
-            class="btn btn-danger"
+            class="btn btn-outline-danger"
           >Delete Account</a>
         </div>
       </div>
