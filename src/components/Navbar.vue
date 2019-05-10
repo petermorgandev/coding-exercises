@@ -2,7 +2,8 @@
   <div class="bg-dark">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">143chars</a>
+        <router-link class="navbar-brand" to="/" v-if="!$store.state.isUserLoggedIn">143chars</router-link>
+        <router-link class="navbar-brand" to="/home" v-if="$store.state.isUserLoggedIn">143chars</router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -16,13 +17,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li
-              class="nav-item"
-              v-for="link in navbarLinks"
-              :to="link.path"
-              v-bind:key="link.index"
-            >
-              <router-link :to="link.path" class="nav-link">{{link.text}}</router-link>
+            <li class="nav-item" v-if="!$store.state.isUserLoggedIn">
+              <router-link to="/register" class="nav-link">Register</router-link>
+            </li>
+            <li class="nav-item" v-if="$store.state.isUserLoggedIn">
+              <router-link :to='`/profile/${$store.state.user}`' class="nav-link">Profile</router-link>
+            </li>
+            <li class="nav-item" v-if="$store.state.isUserLoggedIn">
+              <router-link to="/new" class="nav-link">New Msg</router-link>
+            </li>
+            <li class="nav-item" v-if="$store.state.isUserLoggedIn">
+              <router-link to="/settings" class="nav-link">Settings</router-link>
+            </li>
+            <li class="nav-item" v-if="$store.state.isUserLoggedIn">
+              <a href="#" @click.prevent="logOut" class="nav-link">Log Out</a>
+            </li>
+            <li class="nav-item" v-if="!$store.state.isUserLoggedIn">
+              <router-link to="/login" class="nav-link">Log In</router-link>
             </li>
           </ul>
         </div>
@@ -32,19 +43,18 @@
 </template>
 
 <script>
+import AuthenticationService from "@/services/AuthenticationService";
+
 export default {
   name: "Navbar",
-  data() {
-    return {
-      navbarLinks: [
-        { path: "/register", text: "Register" },
-        { path: "/profile", text: "Profile" },
-        { path: "/new", text: "New Msg" },
-        { path: "settings", text: "Settings" },
-        { path: "logout", text: "Log Out" },
-        { path: "login", text: "Log In" }
-      ]
-    };
+
+  methods: {
+    logOut: async function() {
+      this.$store.state.user = "";
+      this.$store.state.isUserLoggedIn = false;
+      await AuthenticationService.logOut();
+      this.$router.push({ name: "index" });
+    }
   }
 };
 </script>
