@@ -17,14 +17,6 @@
               placeholder="Enter your message"
             ></textarea>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control"
-              name="userId"
-              id="userId"
-              v-model="userId"
-              placeholder="Enter your userId">
-          </div>
-
           <button class="btn btn-primary" @click.prevent="newMsg">Send Message</button>
         </form>
       </div>
@@ -39,7 +31,6 @@ export default {
   data() {
     return {
       messageInput: "",
-      userId: ''
     };
   },
   methods: {
@@ -47,8 +38,8 @@ export default {
       try {
         await AuthenticationService.newMsg({
           messageInput: this.messageInput,
-          userId: this.userId,
-          user: this.userId
+          user: this.$store.state.user,
+          userId: this.$store.state.user
         });
         this.$router.push({ name: "home" });
       } catch (error) {
