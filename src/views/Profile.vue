@@ -21,7 +21,7 @@
             >
             <div class="media-body">
               <h5 class="mt-0 mb-1">{{message.message}}</h5>Posted <span v-if='!currentUser'>by
-              <a :href="'#/profile/' + message.user._id">@{{message.user.username}}</a>&nbsp;</span><span :title="moment(message.date).format('MMMM D, YYYY h:mma')">{{moment(message.date).fromNow()}}</span>&nbsp;<a v-if='currentUser' class='badge badge-danger' href="">Delete</a>
+              <a :href="'#/profile/' + message.user._id">@{{message.user.username}}</a>&nbsp;</span><span :title="moment(message.date).format('MMMM D, YYYY h:mma')">{{moment(message.date).fromNow()}}</span>&nbsp;<a v-if='currentUser' class='badge badge-danger' href="#" @click.prevent="deleteMsg(message._id)">Delete</a>
             </div>
           </li>
         </ul>
@@ -57,6 +57,14 @@ export default {
     getCurrentUser: function(){
       if (this.$route.params.userId === this.$store.state.user){
         this.currentUser = true;
+      }
+    },
+    async deleteMsg(messageId){
+        try {
+        await AuthenticationService.deleteMsg(messageId);
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        this.error = error.response.data.error;
       }
     }
   },
