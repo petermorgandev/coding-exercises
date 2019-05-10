@@ -65,9 +65,7 @@ export default {
           usernameInput: this.usernameInput,
           avatarInput: this.avatarInput
         };
-
-        await AuthenticationService.updateUserSettings(this.$store.state.user.id, data);
-        this.$store.dispatch("setUser", {username: this.usernameInput, avatar: this.avatarInput, id: this.$store.state.user.id});
+        await AuthenticationService.updateUserSettings(this.$store.state.user, data);
         this.$router.push({ name: "home" });
       } catch (error) {
         this.error = error.response.data.error;
