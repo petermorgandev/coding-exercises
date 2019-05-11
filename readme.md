@@ -9,3 +9,4 @@ There is currently a more polished PHP-based version available for download, whi
 
    - [SVG Mana Costs](https://github.com/micku/mana-cost) by Michele Gargiulo
    - [magicthegathering.io](http://magicthegathering.io/)
+   - [jQuery](https://jquery.com/)
