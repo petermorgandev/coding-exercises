@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col">
-        <h3 class="mt-4">Log In</h3>
-      </div>
-    </div>
+    <PageHeader>
+      <h3 class="mt-4">Log In</h3>
+    </PageHeader>
     <div class="row">
       <div class="col">
         <form>
@@ -38,8 +36,12 @@
 
 <script>
 import AuthenticationService from "@/services/AuthenticationService";
+import PageHeader from '@/components/PageHeader';
 
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       usernameInput: "",

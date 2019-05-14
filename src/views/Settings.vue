@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col">
-        <h3 class="my-4">Settings</h3>
-      </div>
-    </div>
+    <PageHeader>
+      <h3 class="my-4">Settings</h3>
+    </PageHeader>
     <div class="row">
       <div class="col-md-6 p-1 mb-4 ">
         <div class="border border-success rounded-lg p-3">
@@ -45,8 +43,12 @@
 
 <script>
 import AuthenticationService from "@/services/AuthenticationService";
+import PageHeader from '@/components/PageHeader';
 
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       avatarOptions: [

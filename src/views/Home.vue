@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col">
-        <h3 class="mt-4">Recent Messages</h3>
-      </div>
-    </div>
+    <PageHeader>
+      <h3 class="mt-4">Recent Messages</h3>
+    </PageHeader>
     <div class="row">
       <div class="col">
         <ul class="list-unstyled mt-2">
@@ -26,7 +24,12 @@
 
 <script>
 import AuthenticationService from "@/services/AuthenticationService";
+import PageHeader from "@/components/PageHeader";
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       loggedIn: this.$store.state.isUserLoggedIn,
