@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <h3 class="mt-4">New Message</h3>
-    </PageHeader>
+    <PageHeader>New Message</PageHeader>
     <div class="row">
       <div class="col">
         <form>

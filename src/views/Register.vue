@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <h3 class="mt-4">Register</h3>
-    </PageHeader>
+    <PageHeader>Register</PageHeader>
     <div class="row">
       <div class="col">
         <form>

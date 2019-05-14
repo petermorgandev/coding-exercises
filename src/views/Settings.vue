@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <h3 class="my-4">Settings</h3>
-    </PageHeader>
+    <PageHeader>Settings</PageHeader>
     <div class="row">
       <div class="col-md-6 p-1 mb-4 ">
         <div class="border border-success rounded-lg p-3">

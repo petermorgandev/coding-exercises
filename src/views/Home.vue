@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <h3 class="mt-4">Recent Messages</h3>
-    </PageHeader>
+    <PageHeader>Recent Messages</PageHeader>
     <div class="row">
       <div class="col">
         <ul class="list-unstyled mt-2">

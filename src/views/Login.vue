@@ -1,8 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <h3 class="mt-4">Log In</h3>
-    </PageHeader>
+    <PageHeader>Log In</PageHeader>
     <div class="row">
       <div class="col">
         <form>

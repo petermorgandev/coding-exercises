@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="col">
-      <slot></slot>
+      <h3 class="my-4">
+        <slot></slot>
+      </h3>
     </div>
   </div>
 </template>

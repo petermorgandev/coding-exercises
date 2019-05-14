@@ -1,11 +1,9 @@
 <template>
   <div>
     <PageHeader>
-      <h3 class="mt-4">
-        {{user}}'s Profile
-        <small v-if="messageCount === 1">{{messageCount}} Message</small>
-        <small v-else>{{messageCount}} Messages</small>
-      </h3>
+      {{user}}'s Profile
+      <small v-if="messageCount === 1">{{messageCount}} Message</small>
+      <small v-else>{{messageCount}} Messages</small>
     </PageHeader>
     <div class="row">
       <div class="col">
