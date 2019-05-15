@@ -37,27 +37,7 @@
           ></chartist>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <h2>Monthly Usage</h2>
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Month</th>
-                <th scope="col">Water Used (Gallons)</th>
-                <th scope="col">Monthly Comparison</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr scope="row" v-for="tableRow in fakeData.tableData" v-bind:key="tableRow.id">
-                <td>{{tableRow.month}} 2019</td>
-                <td>{{tableRow.usage}}</td>
-                <td>{{tableRow.change}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <MonthlyUsage :data='fakeData.tableData' />
     </div>
   </div>
 </template>
@@ -66,6 +46,7 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import MonthlyUsage from "@/components/MonthlyUsage";
 export default {
   data() {
     return {
@@ -88,7 +69,8 @@ export default {
   name: "device",
   components: {
     Navbar,
-    PageHeader
+    PageHeader,
+    MonthlyUsage
   },
   created() {
     this.getData();
