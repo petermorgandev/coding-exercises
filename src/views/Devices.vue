@@ -9,37 +9,8 @@
             <h3>You have not added any devices.</h3>
           </div>
         </div>
-        <div
-          class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4"
-          v-for="device in devices"
-          v-bind:key="device.id"
-        >
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <ul class="list-group mb-3 list-group-flush">
-                <li class="list-group-item">
-                  <h4>Floor:</h4>
-                  <p class="lead">{{device.floor}}</p>
-                </li>
-                <li class="list-group-item">
-                  <h4>Room:</h4>
-                  <p class="lead">{{device.room}}</p>
-                </li>
-                <li class="list-group-item" style="border-bottom:none">
-                  <h4>Connected To:</h4>
-                  <p class="lead">{{device.connectedTo}}</p>
-                </li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center">
-                <a
-                  :href="`#/device/${device.id}`"
-                  class="card-link btn btn-lg btn-custom"
-                >Device Info</a>
-                <span class="text-success">Connected</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <DeviceBox v-for="device in devices"
+    v-bind:key="device.id" :device='device' />
       </div>
     </div>
   </div>
@@ -48,6 +19,7 @@
 <script>
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import DeviceBox from "@/components/DeviceBox";
 export default {
   computed: {
     devices() {
@@ -60,7 +32,8 @@ export default {
   name: "devices",
   components: {
     Navbar,
-    PageHeader
+    PageHeader,
+    DeviceBox
   }
 };
 </script>
