@@ -2,14 +2,10 @@
   <div class="add">
     <Navbar/>
     <div class="container bg-white">
-      <div class="row py-4">
-        <div class="col">
-          <h1>
-            Add New Device
-            <small class="text-muted">{{count}}/6 devices connected</small>
-          </h1>
-        </div>
-      </div>
+      <PageHeader>
+        Add New Device
+        <small class="text-muted">{{count}}/6 devices connected</small>
+      </PageHeader>
       <div class="row">
         <form class="col">
           <div class="form-group">
@@ -53,11 +49,13 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import PageHeader from "@/components/PageHeader";
 
 export default {
   name: "add",
   components: {
-    Navbar
+    Navbar,
+    PageHeader
   },
   data() {
     return {
