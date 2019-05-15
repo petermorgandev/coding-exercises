@@ -1,39 +1,20 @@
-function liOnly() {
-  let textBox = document.getElementById('textarea');
-  let text = textBox.value;
-  let n = text.split("\n");
-  let newText = [];
+function listify (mode) {
+  let newText = [],
+    textBox = document.getElementById('textarea'),
+    n = textBox.value.split("\n");
+    
   for (var x in n) {
-    newText[x] = `<li>${n[x]}</li>`;
+    if (mode){
+      newText[x] = `\t <li>${n[x]}</li>`;
+    } else {
+      newText[x] = `<li>${n[x]}</li>`;
+    }
   }
-  let result = newText.join("\r\n");;
-  textBox.value = result;
-}
 
-function ulPlus(){
-  let textBox = document.getElementById('textarea');
-  let text = textBox.value;
-  let n = text.split("\n");
-  let newText = [];
-  for (var x in n) {
-    newText[x] = `\t <li>${n[x]}</li>`;
+  if (mode){
+    newText.unshift(`<${mode}>`);
+    newText.push(`</${mode}>`);
   }
-  newText.unshift('<ul>');
-  newText.push('</ul>');
-  let result = newText.join("\r\n");;
-  textBox.value = result;
+
+  textBox.value = newText.join("\r\n");
 };
-
-function olPlus(){
-  let textBox = document.getElementById('textarea');
-  let text = textBox.value;
-  let n = text.split("\n");
-  let newText = [];
-  for (var x in n) {
-    newText[x] = `\t <li>${n[x]}</li>`;
-  }
-  newText.unshift('<ol>');
-  newText.push('</ol>');
-  let result = newText.join("\r\n");;
-  textBox.value = result;
-}

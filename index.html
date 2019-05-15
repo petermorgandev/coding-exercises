@@ -10,9 +10,10 @@
   <script src="app.js"></script>
 </head>
 <body>
-  <h1>My Recreation of Listify</h1>
-  <label for="textarea">Textarea</label> 
+  <h1>Text List to HTML List</h1>
   <textarea cols="48" id="textarea" placeholder="Enter your list text here" rows="8"></textarea>
-  <button type="button" onclick="liOnly()">li Only</button> <button type="button" onclick="ulPlus()">ul > li</button> <button type="button" onclick="olPlus()"> ol > li</button>
+  <button type="button" onclick="listify()">li Only</button>
+  <button type="button" onclick="listify('ul')">ul > li</button>
+  <button type="button" onclick="listify('ol')"> ol > li</button>
 </body>
 </html>
