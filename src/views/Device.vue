@@ -2,11 +2,7 @@
   <div class="device">
     <Navbar/>
     <div class="container bg-white">
-      <div class="row py-4">
-        <div class="col-sm-12">
-          <h1>Device Info</h1>
-        </div>
-      </div>
+      <PageHeader>Device Info</PageHeader>
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="card">
@@ -69,6 +65,7 @@
 <script>
 // @ is an alias to /src
 import Navbar from "@/components/Navbar";
+import PageHeader from "@/components/PageHeader";
 export default {
   data() {
     return {
@@ -90,7 +87,8 @@ export default {
   },
   name: "device",
   components: {
-    Navbar
+    Navbar,
+    PageHeader
   },
   created() {
     this.getData();

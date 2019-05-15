@@ -2,11 +2,7 @@
   <div class="devices">
     <Navbar/>
     <div class="container bg-white">
-      <div class="row py-4">
-        <div class="col-sm-12">
-          <h1>Connected Devices</h1>
-        </div>
-      </div>
+      <PageHeader>Connected Devices</PageHeader>
       <div class="row">
         <div v-if="count === 0">
           <div class="col-sm-12">
@@ -51,6 +47,7 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import PageHeader from "@/components/PageHeader";
 export default {
   computed: {
     devices() {
@@ -62,7 +59,8 @@ export default {
   },
   name: "devices",
   components: {
-    Navbar
+    Navbar,
+    PageHeader
   }
 };
 </script>
