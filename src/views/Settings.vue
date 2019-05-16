@@ -20,15 +20,14 @@
           </form>
         </div>
       </div>
-
       <div class="col-md-6 p-1">
         <div class="border border-danger rounded-lg p-3">
           <h4 class="mb-3">Danger Zone</h4>
           <p>These options are irreversible!</p>
           <a
             @click.prevent="deleteAllMessages()" href="#"
-            class="btn btn-outline-danger"
-          >Delete All Messages</a>&nbsp;
+            class="btn btn-outline-danger">
+            Delete All Messages</a>&nbsp;
           <a
             @click.prevent="deleteUser()" href="#"
             class="btn btn-outline-danger"
@@ -83,7 +82,7 @@ export default {
       }
     },
     async deleteAllMessages(){
-        try {
+      try {
         await AuthenticationService.deleteAllMessages(this.$store.state.user);
         this.$router.push({ name: 'home' });
       } catch (error) {
@@ -91,7 +90,7 @@ export default {
       }
     },
     async deleteUser(){
-        try {
+      try {
         await AuthenticationService.logOut();
         await AuthenticationService.deleteUser(this.$store.state.user);
         this.$store.state.user = "";
