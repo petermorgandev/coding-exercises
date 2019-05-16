@@ -19,8 +19,8 @@ function listify(mode) {
   textBox.value = newText.join("\r\n");
 };
 
-document.getElementById('liOnly').addEventListener('click',  () => { listify() });
+document.getElementById('liOnly').addEventListener('click', () => { listify() });
 
 document.getElementById('ulLi').addEventListener('click', () => { listify('ul') });
 
-document.getElementById('olLi').addEventListener('click',  () => {listify('ol')});
+document.getElementById('olLi').addEventListener('click', () => { listify('ol') });
