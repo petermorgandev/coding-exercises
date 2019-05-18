@@ -47,5 +47,8 @@ export default new Router({
       name: 'settings',
       component: Settings
     }
-  ]
-})
+  ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
+});
