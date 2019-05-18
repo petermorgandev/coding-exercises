@@ -30,5 +30,8 @@ export default new Router({
       name: 'device',
       component: Device
     }
-  ]
-})
+  ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
+});
