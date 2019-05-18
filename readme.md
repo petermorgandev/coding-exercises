@@ -1,12 +1,17 @@
 # Pauper Guessing Game
-This is a guessing game for Magic: The Gathering streamers. Fill dead air by providing your viewers with a fun guessing game. The game is currently configured to only show cards printed at common rarity.
 
-To use the game in your stream crop the browser window to the black box in your streaming software. The card will be revealed in 1 minute. Refresh the browser for a new card.
+This is a guessing game for Magic: The Gathering cards. It was created to help streamers on sites like twitch.tv fill "dead air" by providing viewers with a fun game. A single card is randomly retrieved using the [magicthegathering.io](http://magicthegathering.io/) API. Details about the card are revealed over time with the full card details shown after 1 minute.
 
-There is currently a more polished PHP-based version available for download, which you can upload to your own web server, and a Javascript-based version hosted on Github pages.
+**Adding the game to your stream**
 
-## Resources used:
+To use the game in your stream crop the browser window to the black box in your streaming software. The card will be fully revealed after 1 minute. Refresh the browser for a new card. The game is currently configured to only use cards printed at common rarity and does not include lands.
 
-   - [SVG Mana Costs](https://github.com/micku/mana-cost) by Michele Gargiulo
-   - [magicthegathering.io](http://magicthegathering.io/)
-   - [jQuery](https://jquery.com/)
+**Alternative PHP Version**
+
+There is an alternative PHP-based version of the guessing game available for download, which you can upload to your own web server.
+
+**Resources Used:**
+
+- [jQuery](https://jquery.com/)
+- [MagicTheGathering.io](http://magicthegathering.io/)
+- [SVG Mana Costs](https://github.com/micku/mana-cost)
