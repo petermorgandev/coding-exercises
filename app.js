@@ -1,26 +1,32 @@
-function listify(mode) {
-  let newText = [],
-    textBox = document.getElementById('textarea'),
-    n = textBox.value.split("\n");
+const getTextarea = document.getElementById("textarea");
 
-  for (var x in n) {
-    if (mode) {
-      newText[x] = `\t <li>${n[x]}</li>`;
-    } else {
-      newText[x] = `<li>${n[x]}</li>`;
-    }
+function addLI(isNested) {
+  let splitArray = getTextarea.value.split("\n");
+  if (isNested) {
+    return splitArray.map(x => `\t <li>${x}</li>`);
+  } else {
+    return splitArray.map(x => `<li>${x}</li>`);
   }
+}
 
-  if (mode) {
-    newText.unshift(`<${mode}>`);
-    newText.push(`</${mode}>`);
-  }
+const nestList = (arr, mode) => [`<${mode}>`, ...arr, `</${mode}>`];
 
-  textBox.value = newText.join("\r\n");
+const appendLineBreaks = inputArray => inputArray.join("\r\n");
+
+const basicList = () => {
+  getTextarea.value = appendLineBreaks(addLI());
 };
 
-document.getElementById('liOnly').addEventListener('click', () => { listify() });
+const nestedList = mode => {
+  getTextarea.value = appendLineBreaks(nestList(addLI(true), mode));
+};
 
-document.getElementById('ulLi').addEventListener('click', () => { listify('ul') });
+document.getElementById("liOnly").addEventListener("click", basicList);
 
-document.getElementById('olLi').addEventListener('click', () => { listify('ol') });
+document.getElementById("ulLi").addEventListener("click", () => {
+  nestedList("ul");
+});
+
+document.getElementById("olLi").addEventListener("click", () => {
+  nestedList("ol");
+});
