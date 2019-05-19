@@ -1,13 +1,13 @@
 const getTextarea = document.getElementById("textarea");
 
-function addLI(isNested) {
+const addLI = isNested => {
   let splitArray = getTextarea.value.split("\n");
   if (isNested) {
     return splitArray.map(x => `\t <li>${x}</li>`);
   } else {
     return splitArray.map(x => `<li>${x}</li>`);
   }
-}
+};
 
 const nestList = (arr, mode) => [`<${mode}>`, ...arr, `</${mode}>`];
 
@@ -17,16 +17,16 @@ const basicList = () => {
   getTextarea.value = appendLineBreaks(addLI());
 };
 
-const nestedList = mode => {
-  getTextarea.value = appendLineBreaks(nestList(addLI(true), mode));
+const ulList = () => {
+  getTextarea.value = appendLineBreaks(nestList(addLI(true), "ul"));
+};
+
+const olList = () => {
+  getTextarea.value = appendLineBreaks(nestList(addLI(true), "ol"));
 };
 
 document.getElementById("liOnly").addEventListener("click", basicList);
 
-document.getElementById("ulLi").addEventListener("click", () => {
-  nestedList("ul");
-});
+document.getElementById("ulLi").addEventListener("click", ulList);
 
-document.getElementById("olLi").addEventListener("click", () => {
-  nestedList("ol");
-});
+document.getElementById("olLi").addEventListener("click", olList);
