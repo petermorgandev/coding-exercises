@@ -1,9 +1,11 @@
 const getTextarea = document.getElementById("textarea");
+const getSelect = document.getElementById("indentation");
 
 const addLI = isNested => {
   let splitArray = getTextarea.value.split("\n");
+  let { value } = getSelect;
   if (isNested) {
-    return splitArray.map(x => `\t <li>${x}</li>`);
+    return splitArray.map(x => `${value}<li>${x}</li>`);
   } else {
     return splitArray.map(x => `<li>${x}</li>`);
   }
