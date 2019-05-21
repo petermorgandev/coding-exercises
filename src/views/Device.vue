@@ -3,20 +3,29 @@
     <Navbar/>
     <div class="container bg-white">
       <PageHeader>Device Info</PageHeader>
-      <DeviceData :deviceData='deviceData' />
-      <div class="row">
-        <div class="col-sm-12">
-          <h2 class>Weekly Usage</h2>
-          <chartist
-            type="Line"
-            ratio="ct-major-twelfth"
-            :data="chartData"
-            :options="chartOptions"
-            class="my-4"
-          ></chartist>
+      <div v-if="!deviceData">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>You have not added any devices.</h3>
+          </div>
         </div>
       </div>
-      <MonthlyUsage :data='fakeData.tableData' />
+      <div v-else>
+        <DeviceData :deviceData="deviceData"/>
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class>Weekly Usage</h2>
+            <chartist
+              type="Line"
+              ratio="ct-major-twelfth"
+              :data="chartData"
+              :options="chartOptions"
+              class="my-4"
+            ></chartist>
+          </div>
+        </div>
+        <MonthlyUsage :data="fakeData.tableData"/>
+      </div>
     </div>
   </div>
 </template>
