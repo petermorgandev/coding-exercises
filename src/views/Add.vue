@@ -6,7 +6,7 @@
         Add New Device
         <small class="text-muted">{{count}}/6 devices connected</small>
       </PageHeader>
-      <AddDeviceForm/>
+      <lazyAddDeviceForm/>
     </div>
   </div>
 </template>
@@ -14,14 +14,14 @@
 <script>
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import AddDeviceForm from "@/components/AddDeviceForm";
+const lazyAddDeviceForm = () => import("@/components/AddDeviceForm");
 
 export default {
   name: "add",
   components: {
     Navbar,
     PageHeader,
-    AddDeviceForm
+    lazyAddDeviceForm
   },
   computed: {
     count() {

@@ -11,7 +11,7 @@
         </div>
       </div>
       <div v-else>
-        <DeviceData :deviceData="deviceData"/>
+        <lazyDeviceData :deviceData="deviceData"/>
         <div class="row">
           <div class="col-sm-12">
             <h2 class>Weekly Usage</h2>
@@ -24,7 +24,7 @@
             ></chartist>
           </div>
         </div>
-        <MonthlyUsage :data="fakeData.tableData"/>
+        <lazyMonthlyUsage :data="fakeData.tableData"/>
       </div>
     </div>
   </div>
@@ -34,8 +34,9 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import DeviceData from "@/components/DeviceData";
-import MonthlyUsage from "@/components/MonthlyUsage";
+
+const lazyDeviceData = () => import("@/components/DeviceData");
+const lazyMonthlyUsage = () => import("@/components/MonthlyUsage");
 export default {
   data() {
     return {
@@ -59,8 +60,8 @@ export default {
   components: {
     Navbar,
     PageHeader,
-    DeviceData,
-    MonthlyUsage
+    lazyDeviceData,
+    lazyMonthlyUsage
   },
   created() {
     this.getData();
