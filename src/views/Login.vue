@@ -1,14 +1,14 @@
 <template>
-  <LoginBox />
+  <lazyLoginBox/>
 </template>
 
 <script>
-import LoginBox from '@/components/LoginBox';
+const lazyLoginBox = () => import("@/components/LoginBox");
 
 export default {
   name: "login",
   components: {
-      LoginBox
-    }
+    lazyLoginBox
+  }
 };
 </script>
