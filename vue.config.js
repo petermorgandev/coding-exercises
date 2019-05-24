@@ -1,5 +1,10 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/water-meter/'
-    : '/'
-}
+  configureWebpack: config => {
+    optimization: {
+      splitChunks: {
+        chunks: "all";
+      }
+    }
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/water-meter/" : "/"
+};

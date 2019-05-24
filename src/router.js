@@ -1,34 +1,29 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Devices from './views/Devices.vue'
-import Device from './views/Device.vue'
-import Login from './views/Login.vue'
-import Add from './views/Add.vue'
-//import Device from './views/Device.vue'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'login',
-      component: Login
+      path: "/",
+      name: "login",
+      component: () => import("./views/Login.vue")
     },
     {
-      path: '/devices',
-      name: 'devices',
-      component: Devices
+      path: "/devices",
+      name: "devices",
+      component: () => import("./views/Devices.vue")
     },
     {
-      path: '/add',
-      name: 'add',
-      component: Add
+      path: "/add",
+      name: "add",
+      component: () => import("./views/Add.vue")
     },
     {
-      path: '/device/:id',
-      name: 'device',
-      component: Device
+      path: "/device/:id",
+      name: "device",
+      component: () => import("./views/Device.vue")
     }
   ],
   scrollBehavior() {
