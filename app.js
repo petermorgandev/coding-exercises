@@ -1,12 +1,14 @@
-let convert = new showdown.Converter()
+const convert = new showdown.Converter();
 
 const addJot = event => {
   event.preventDefault();
-  const templateStart = `<div class="tile is-child box">
-    <a href="#" class="button is-danger is-outlined is-small is-pulled-right deleteButton">Delete</a>`;
-  const templateEnd = '</p></div>';
   let markedContent = convert.makeHtml($(".textarea").val());
-  $('#tileParent').append(`${templateStart}${markedContent}${templateEnd}`);
+  const template = 
+    `<div class="tile is-child box content">
+      <a href="#" class="button is-danger is-outlined is-small is-pulled-right deleteButton">Delete</a>
+      ${markedContent}
+    </div>`;
+  $('#tileParent').append(template);
   $(".textarea").val('');
 };
 
