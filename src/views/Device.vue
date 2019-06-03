@@ -43,7 +43,7 @@ export default {
       deviceData: null,
       fakeData: null,
       chartData: {
-        labels: ["A", "B", "C", "d", "e", "f"],
+        labels: ["M", "Tu", "W", "Th", "F", "Sa", "Su"],
         series: null
       },
       chartOptions: {
