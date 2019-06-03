@@ -4,6 +4,7 @@
     <div class="container bg-white">
       <PageHeader>
         Add New Device
+        <br>
         <small class="text-muted">{{count}}/6 devices connected</small>
       </PageHeader>
       <lazyAddDeviceForm/>

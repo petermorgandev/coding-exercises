@@ -4,15 +4,15 @@
     <div class="container bg-white">
       <PageHeader>Device Info</PageHeader>
       <div v-if="!deviceData">
-        <div class="row">
-          <div class="col-sm-12">
+        <div class="row px-4">
+          <div class="col">
             <h3>You have not added any devices.</h3>
           </div>
         </div>
       </div>
       <div v-else>
         <lazyDeviceData :deviceData="deviceData"/>
-        <div class="row">
+        <div class="row px-4">
           <div class="col-sm-12">
             <h2 class>Weekly Usage</h2>
             <chartist

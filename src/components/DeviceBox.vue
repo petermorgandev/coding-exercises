@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4">
+  <div class="col-sm-12 mb-4">
     <div class="card shadow-sm">
       <div class="card-body">
         <ul class="list-group mb-3 list-group-flush">

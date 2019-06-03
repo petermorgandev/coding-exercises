@@ -1,6 +1,6 @@
 <template>
-  <div class="row py-4">
-    <div class="col-sm-12">
+  <div class="row justify-content-center p-4">
+    <div class="col">
       <h1>
         <slot></slot>
       </h1>

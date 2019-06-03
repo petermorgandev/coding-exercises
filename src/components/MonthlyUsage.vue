@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="row px-4">
+    <div class="col">
       <h2>Monthly Usage</h2>
       <table class="table table-sm">
         <thead>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'MonthlyUsage',
+  name: "MonthlyUsage",
   props: {
     data: Array
   }

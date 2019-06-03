@@ -3,11 +3,9 @@
     <Navbar/>
     <div class="container bg-white">
       <PageHeader>Connected Devices</PageHeader>
-      <div class="row">
-        <div v-if="count === 0" id="count0">
-          <div class="col-sm-12">
-            <h3>You have not added any devices.</h3>
-          </div>
+      <div class="row justify-content-center px-4">
+        <div class="col" v-if="count === 0" id="count0">
+          <h3>You have not added any devices.</h3>
         </div>
         <lazyAddDeviceBox v-for="device in devices" v-bind:key="device.id" :device="device"/>
       </div>

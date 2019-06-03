@@ -2,7 +2,7 @@
   <div class="container text-center">
     <div class="row">
       <div class="col">
-        <div class="loginBox mt-5 pt-5 px-3">
+        <div class="bg-white mt-5 pt-5 px-3">
           <img alt="logo" src="../assets/pipe.svg" class="mb-5">
           <h1 class="h3 mb-4 font-weight-normal">Please sign in</h1>
           <form class="p-3">
@@ -30,11 +30,5 @@ form {
 img {
   width: 200px;
   height: 200px;
-}
-
-.loginBox {
-  background-color: white;
-  max-width: 350px;
-  margin: auto;
 }
 </style>

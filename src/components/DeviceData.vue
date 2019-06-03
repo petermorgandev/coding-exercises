@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="col">
       <div class="card">
         <div class="card-body">
           <ul class="list-group mb-3 list-group-flush">
