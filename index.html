@@ -11,36 +11,45 @@
     <title>Jotter</title>
   </head>
   <body>
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <h1 class="title">Jotter</h1>
+    <section class="hero is-bold is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Jotter
+          </h1>
+          <h2 class="subtitle">
+            Jotter is a jQuery app for storing small, temporary, notes.
+          </h2>
         </div>
       </div>
-      <div class="columns">
-        <div class="column is-half">
-          <div class="field">
-            <textarea
-              class="textarea"
-              placeholder="Add your jots in markdown"
-              rows="5"
-            ></textarea>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-desktop">
+          <div class="column is-half-desktop">
+            <div class="field">
+              <textarea
+                class="textarea is-info"
+                placeholder="Add your jots in markdown"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-info is-outlined" id="submitButton">
+                  Submit
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="field">
-            <div class="control">
-              <button class="button is-primary" id="submitButton">
-                Submit
-              </button>
+          <div class="column is-half-desktop">
+            <div class="tile is-ancestor">
+              <div class="tile is-parent is-vertical" id="tileParent"></div>
             </div>
           </div>
         </div>
-        <div class="column is-half">
-          <div class="tile is-ancestor">
-            <div class="tile is-parent is-vertical" id="tileParent"></div>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
     <script src="app.js"></script>
