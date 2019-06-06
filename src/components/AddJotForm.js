@@ -28,7 +28,7 @@ class AddJotForm extends Component {
         </div>
         <div className="field">
           <div className="control">
-            <button className="button is-primary" id="submitButton" onClick={this.onClick}>
+            <button className="button is-info is-outlined" id="submitButton" onClick={this.onClick}>
               Submit
             </button>
           </div>
