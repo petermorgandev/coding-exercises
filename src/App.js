@@ -23,18 +23,28 @@ class App extends Component {
 
   render(){
     return (
-      <div className="container">
+      <div id="app">
         <Header />
-        <div className="columns">
-          <AddJotForm  addJot={this.addJot} />
-          <div className="column is-half">
-            <div className="tile is-ancestor">
-              <div className="tile is-parent is-vertical" id="tileParent">
-                <Jots jots={this.state.jots} deleteJot={this.deleteJot} />
+        <section className="section">
+          <div className="container">
+            <div className="columns is-desktop">
+              <AddJotForm addJot={this.addJot} />
+              <div className="column is-half-desktop">
+                <div className="tile is-ancestor">
+                  <div
+                    className="tile is-parent is-vertical"
+                    id="tileParent"
+                  >
+                    <Jots
+                      jots={this.state.jots}
+                      deleteJot={this.deleteJot}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     );
   }

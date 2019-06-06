@@ -16,10 +16,10 @@ class AddJotForm extends Component {
 
   render(){
     return (
-      <div className="column is-half">
+      <div className="column is-half-desktop">
         <div className="field">
           <textarea
-            className="textarea"
+            className="textarea is-info"
             placeholder="Add your jots in markdown"
             rows="5"
             value={this.state.content}
