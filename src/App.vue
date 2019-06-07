@@ -1,12 +1,17 @@
 <template>
   <div id="app" class="container">
+    <div class="row mb-4 bg-dark text-white p-3 rounded-bottom">
+      <div class="col-sm-12">
+        <h1>Button Styler</h1>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-6">
+      <div class="col-sm-12 col-md-5 mb-5 mb-md-0">
         <styler :styling="styling"/>
       </div>
-      <div class="col-6">
-        <c-s-s-output :styling="styling"/>
-        <visual-view :styling="styling"/>
+      <div class="col-sm-12 col-md-6 offset-md-1">
+        <c-s-s-output :styling="styling" class="mb-5"/>
+        <visual-view :styling="styling" class="mb-5 mb-md-0"/>
       </div>
     </div>
   </div>
