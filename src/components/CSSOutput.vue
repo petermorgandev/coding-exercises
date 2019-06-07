@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 rounded-lg bg-light">
     <pre class><code><span class="cssSelector">{{styling.className}}</span> {
-  <span class="cssProperty">font-size</span>: <span class="cssPropertyValue">{{styling.fontSize}}px</span>
+  <span class="cssProperty">font-size</span>: <span class="cssPropertyValue">{{styling.fontSize}}px,</span>
   <span class="cssProperty">padding</span>: <span class="cssPropertyValue">{{styling.vPadding}}px {{styling.hPadding}}px</span>,
   <span class="cssProperty">border-radius</span>: <span class="cssPropertyValue">{{styling.borderRadius}}%</span>,
   <span class="cssProperty">border-width</span>: <span class="cssPropertyValue">{{styling.borderSize}}px</span>,
