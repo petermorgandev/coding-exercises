@@ -1,73 +1,83 @@
 <template>
   <form>
     <div class="form-group">
-      <label for="exampleFormControlInput1">class name</label>
+      <label for="className">CSS Class Name</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="exampleFormControlInput1"
-        placeholder="name@example.com"
+        id="className"
+        placeholder="Add a CSS class name"
         v-model="styling.className"
       >
     </div>
     <div class="form-group">
-      <label for="exampleFormControlInput1">button text</label>
+      <label for="buttonText">Button Text</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="exampleFormControlInput1"
-        placeholder="name@example.com"
+        id="buttonText"
+        placeholder="Add button preview text"
         v-model="styling.buttonText"
       >
     </div>
     <div class="form-group">
-      <label for="formControlRange">Font Size:</label>
+      <label for="fontSize">Font Size:</label>
       <input
         type="range"
         class="form-control-range"
-        id="formControlRange"
+        id="fontSize"
+        min="10"
+        max="50"
         v-model="styling.fontSize"
       >
     </div>
     <div class="form-group">
-      <label for="formControlRange">vertical padding:</label>
+      <label for="vPadding">Vertical Padding:</label>
       <input
         type="range"
         class="form-control-range"
-        id="formControlRange"
+        id="vPadding"
+        min="0"
+        max="50"
         v-model="styling.vPadding"
       >
     </div>
     <div class="form-group">
-      <label for="formControlRange">horizontal padding:</label>
+      <label for="hPadding">Horizontal Padding:</label>
       <input
         type="range"
         class="form-control-range"
-        id="formControlRange"
+        id="hPadding"
+        min="0"
+        max="50"
         v-model="styling.hPadding"
       >
     </div>
     <div class="form-group">
-      <label for="formControlRange">border radius:</label>
+      <label for="borderRadius">Border Radius:</label>
       <input
         type="range"
         class="form-control-range"
-        id="formControlRange"
+        id="borderRadius"
+        min="0"
+        max="50"
         v-model="styling.borderRadius"
       >
     </div>
     <div class="form-group">
-      <label for="formControlRange">border size:</label>
+      <label for="borderSize">Border Size:</label>
       <input
         type="range"
         class="form-control-range"
-        id="formControlRange"
+        id="borderSize"
+        min="0"
+        max="20"
         v-model="styling.borderSize"
       >
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">border style</label>
-      <select class="form-control" id="exampleFormControlSelect1" v-model="styling.borderStyle">
+      <label for="borderStyle">Border Style</label>
+      <select class="form-control" id="borderStyle" v-model="styling.borderStyle">
         <option>none</option>
         <option>hidden</option>
         <option>dotted</option>
@@ -81,31 +91,16 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">border color</label>
-      <input
-        type="color"
-        class="form-control-range"
-        id="formControlRange"
-        v-model="styling.borderColor"
-      >
+      <label for="borderColor">Border Color</label>
+      <input type="color" class="form-control-range" id="borderColor" v-model="styling.borderColor">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">font color</label>
-      <input
-        type="color"
-        class="form-control-range"
-        id="formControlRange"
-        v-model="styling.fontColor"
-      >
+      <label for="fontColor">Font Color</label>
+      <input type="color" class="form-control-range" id="fontColor" v-model="styling.fontColor">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">background color</label>
-      <input
-        type="color"
-        class="form-control-range"
-        id="formControlRange"
-        v-model="styling.bgColor"
-      >
+      <label for="bgColor">Background Color</label>
+      <input type="color" class="form-control-range" id="bgColor" v-model="styling.bgColor">
     </div>
   </form>
 </template>

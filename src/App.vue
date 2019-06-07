@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="container">
     <div class="row">
-      <div class="col-4">
+      <div class="col-6">
         <styler :styling="styling"/>
       </div>
-      <div class="col-8">
+      <div class="col-6">
         <c-s-s-output :styling="styling"/>
         <visual-view :styling="styling"/>
       </div>
@@ -28,8 +28,8 @@ export default {
     return {
       styling: {
         fontColor: "#ffffff",
-        borderColor: "#000000",
-        bgColor: "#aaaaaa",
+        borderColor: "#aaaaaa",
+        bgColor: "#bbbbbb",
         className: ".btn",
         buttonText: "Submit",
         fontSize: 18,
