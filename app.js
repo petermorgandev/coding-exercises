@@ -1,14 +1,11 @@
 var getTextarea = document.getElementById("textarea");
-var getSelect = document.getElementById("indentation");
 var addLI = function (isNested) {
     var splitArray = getTextarea.value.split("\n");
+    var getSelect = document.getElementById("indentation");
     var value = getSelect.value;
-    if (isNested) {
-        return splitArray.map(function (x) { return value + "<li>" + x + "</li>"; });
-    }
-    else {
-        return splitArray.map(function (x) { return "<li>" + x + "</li>"; });
-    }
+    return splitArray.map(function (x) {
+        return isNested ? value + "<li>" + x + "</li>" : "<li>" + x + "</li>";
+    });
 };
 var nestList = function (arr, mode) { return [
     "<" + mode + ">"
