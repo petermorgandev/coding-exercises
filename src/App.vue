@@ -32,9 +32,9 @@ export default {
   data() {
     return {
       styling: {
-        fontColor: "#ffffff",
-        borderColor: "#aaaaaa",
-        bgColor: "#bbbbbb",
+        fontColor: "#0f29e6",
+        borderColor: "#709be4",
+        bgColor: "#b6d7fc",
         className: ".btn",
         buttonText: "Submit",
         fontSize: 18,
