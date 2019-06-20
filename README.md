@@ -2,5 +2,5 @@
 
 Project built with:
 
-- [Materialize](https://materializecss.com/) - CSS Framework
+- [Spectre](https://picturepan2.github.io/spectre/) - CSS Framework
 - [jQuery](https://jquery.com/) - JavaScript Framework

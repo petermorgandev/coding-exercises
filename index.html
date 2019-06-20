@@ -3,40 +3,39 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <nav>
-      <div class="container">
-        <div class="nav-wrapper">
-          <span href="#" class="brand-logo">
-            <i class="material-icons">photo_library</i>Reddit Gallery
-          </span>
-          <form class="right" id="subSearch">
-            <div class="input-field">
-              <input id="search" type="search" required />
-              <label class="label-icon" for="search">
-                <i class="material-icons">search</i>
-              </label>
-              <i class="material-icons">close</i>
+    <div class="container grid-lg">
+      <div class="columns">
+        <div class="column col-12">
+          <h1>Reddit Gallery</h1>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column col-sm-12 col-md-8 col-lg-6 col-6 mb-2">
+          <form id="subSearch">
+            <div class="input-group">
+              <span class="input-group-addon">reddit.com/r/</span>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter Subreddit Name"
+                id="searchForm"
+              />
+              <button class="btn btn-primary input-group-btn">
+                Submit
+              </button>
             </div>
           </form>
         </div>
       </div>
-    </nav>
-
-    <div class="container">
       <div id="app"></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
