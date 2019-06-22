@@ -20,14 +20,17 @@ const appendLineBreaks = (inputArray: Array<string>): string =>
 
 const basicList = () => {
   getTextarea.value = appendLineBreaks(addLI(false));
+  document.getElementById("liOnly").blur();
 };
 
 const ulList = () => {
   getTextarea.value = appendLineBreaks(nestList(addLI(true), "ul"));
+  document.getElementById("ulLi").blur();
 };
 
 const olList = () => {
   getTextarea.value = appendLineBreaks(nestList(addLI(true), "ol"));
+  document.getElementById("olLi").blur();
 };
 
 document.getElementById("liOnly").addEventListener("click", basicList);

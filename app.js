@@ -17,12 +17,15 @@ var appendLineBreaks = function (inputArray) {
 };
 var basicList = function () {
     getTextarea.value = appendLineBreaks(addLI(false));
+    document.getElementById("liOnly").blur();
 };
 var ulList = function () {
     getTextarea.value = appendLineBreaks(nestList(addLI(true), "ul"));
+    document.getElementById("ulLi").blur();
 };
 var olList = function () {
     getTextarea.value = appendLineBreaks(nestList(addLI(true), "ol"));
+    document.getElementById("olLi").blur();
 };
 document.getElementById("liOnly").addEventListener("click", basicList);
 document.getElementById("ulLi").addEventListener("click", ulList);
