@@ -10,6 +10,7 @@ const addJot = event => {
     </div>`;
   $('#tileParent').append(template);
   $(".textarea").val('');
+  $('#submitButton').blur();
 };
 
 const removeJot = event => {
