@@ -49,6 +49,7 @@ let state = {
   },
   formSubmit: async function(event){
     event.preventDefault();
+    $("#app").html('');
     this.searchInput = $("#searchForm");
     this.searchInput.blur();
     await this.getSubredditUrl();
