@@ -28,7 +28,7 @@ let state = {
         url.match(/\.(jpg|png|jpeg|bpm|gif)$/)
       ) {
         img = `<div class="card-image">
-          <img src="${url}" class="img-responsive" />
+          <a href="${url}"><img src="${url}" class="img-responsive" /></a>
           </div>`;
       }
       html += `
@@ -39,7 +39,7 @@ let state = {
               <span class="card-title">${title}</span>
             </div>
             <div class="card-footer">
-              <a href="https://www.reddit.com${permalink}" target="_blank">Permalink</a>
+              <a href="https://www.reddit.com${permalink}" target="_blank">Comments</a>
             </div>
           </div>
         </div>`;
