@@ -22,19 +22,28 @@ let state = {
     let html = `<div class="columns">`;
     $.each(this.posts, function(i, item) {
       let {url, id, title, permalink} = item.data;
-      let img = "";
+      let content = "";
       if (
         url &&
         url.match(/\.(jpg|png|jpeg|bpm|gif)$/)
       ) {
-        img = `<div class="card-image">
+        content = `<div class="card-image">
           <a href="${url}"><img src="${url}" class="img-responsive" /></a>
           </div>`;
+      } 
+      else if (
+        url &&
+        url.match(/\.(gifv)$/)
+      ) {
+        let newURL = url.replace(".gifv", ".mp4");
+        content = `<div class="card-image">
+        <video src="${newURL}" style="max-width: 100%" autoplay loop />
+        </div>`;
       }
       html += `
         <div class="column col-lg-12 col-xl-6 col-6 mb-2 singlePost" id="${id}">
           <div class="card">
-            ${img}
+            ${content}
             <div class="card-body">
               <span class="card-title">${title}</span>
             </div>
