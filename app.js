@@ -11,6 +11,7 @@ const addJot = event => {
     </div>`;
   tileParent.insertAdjacentHTML("beforeend", template);
   textBox.value = "";
+  document.getElementById("submitButton").blur();
 };
 
 const removeJot = event => {
