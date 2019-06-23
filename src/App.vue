@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <div class="row mb-4 bg-dark text-white p-3 rounded-bottom">
+    <div class="row mb-4 bg-dark text-white p-3">
       <div class="col-sm-12">
         <h1>Button Styler</h1>
       </div>
