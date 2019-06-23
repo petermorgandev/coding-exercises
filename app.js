@@ -6,66 +6,45 @@ let state = {
   url: null,
   selectSortBy: null,
   mode: null,
-  getSubredditUrl: function(){
+  getSubredditUrl: function() {
     this.subreddit = this.searchInput.val();
     this.mode = this.selectSortBy.val();
     this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}`;
   },
-  getPosts: async function(){
+  getPosts: async function() {
     await fetch(this.url)
-    .then(res => res.json())
-    .then(json => {
-      let {after, children} = json.data;
-      this.after = after;
-      this.posts = children;
-    })
+      .then(res => res.json())
+      .then(json => {
+        let { after, children } = json.data;
+        this.after = after;
+        this.posts = children;
+      });
   },
-  contentEmbed: function(domain, url, embed){
-    if (
-      url &&
-      url.match(/\.(jpg|png|jpeg|bpm|gif)$/)
-    ) {
+  contentEmbed: function(url) {
+    if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
       content = `<div class="card-image">
         <a href="${url}"><img src="${url}" class="img-responsive" /></a>
         </div>`;
       return content;
-    } 
-    else if (
-      url &&
-      url.match(/\.(gifv)$/)
-    ) {
+    } else if (url && url.match(/\.(gifv)$/)) {
       let newURL = url.replace(".gifv", ".mp4");
       content = `<div class="card-image">
       <video src="${newURL}" style="max-width: 100%" autoplay loop />
       </div>`;
       return content;
-    }/* 
-    else if (
-      url &&
-      domain === "gfycat.com"
-    ) {
-      let newURL = url.replace("https://gfycat.com/", "https://gfycat.com/ifr/");
-      newURL += "?autoplay=0";
-      console.log(newURL);
-      content = `
-      <div class="card-image">
-      <iframe src="${newURL}" style="max-width: 100%"/>
-      </div>`;
-      return content;
-    } */
-    else {
+    } else {
       return "";
     }
   },
-  formatPosts: function(){
+  formatPosts: function() {
     let html = `<div class="columns">`;
     $.each(this.posts, function(i, item) {
-      let {domain, url, id, title, permalink} = item.data;
-      let content = state.contentEmbed(domain, url, item.data.media_embed.content);
+      let { url, id, title, permalink } = item.data;
+      let content = state.contentEmbed(url);
       html += `
         <div class="column col-lg-12 col-xl-6 col-6 mb-2 singlePost" id="${id}">
           <div class="card">
-            ${content.toString()}
+            ${content}
             <div class="card-body">
               <span class="card-title">${title}</span>
             </div>
@@ -78,39 +57,38 @@ let state = {
     html += `</div>`;
     $("#app").append(html);
   },
-  formSubmit: async function(event){
+  updateURL: function() {
+    if (this.mode === "hot.json" || this.mode === "new.json") {
+      this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode
+      }?after=${this.after}`;
+    } else {
+      this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}&after=${this.after}`;
+    }
+  },
+  formSubmit: async function(event) {
     event.preventDefault();
-    $("#app").html('');
+    $("#app").html("");
     this.searchInput = $("#searchForm");
     this.selectSortBy = $("#sortBy");
     this.searchInput.blur();
     await this.getSubredditUrl();
     await this.getPosts();
     this.formatPosts();
-    if(this.mode === "hot.json" || this.mode === "new.json") {
-      this.url += `?after=${this.after}`;
-    } else {
-      this.url += `&after=${this.after}`;
-    }
+    this.updateURL();
   },
-  loadMorePosts: async function(){
+  loadMorePosts: async function() {
     if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
       await this.getPosts();
       this.formatPosts();
-      if(this.mode === "hot.json" || this.mode === "new.json") {
-        this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}?after=${this.after}`;
-      } else {
-        this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}&after=${this.after}`;
-      }
+      this.updateURL();
     }
   }
 };
 
-$("#subSearch").on("submit", function(){
+$("#subSearch").on("submit", function() {
   state.formSubmit(event);
 });
 
-
-$(window).on("scroll", function () {
+$(window).on("scroll", function() {
   state.loadMorePosts();
 });
