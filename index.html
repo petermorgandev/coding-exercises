@@ -16,9 +16,19 @@
         </div>
       </div>
       <div class="columns">
-        <div class="column col-sm-12 col-md-8 col-lg-6 col-6 mb-2">
+        <div class="column col-sm-12 col-md-12 col-lg-10 col-10 mb-2">
           <form id="subSearch">
             <div class="input-group">
+              <select class="form-select" id="sortBy">
+                <option value="hot.json">Hot</option>
+                <option value="new.json">New</option>
+                <option value="top.json?t=hour">Top (Hour)</option>
+                <option value="top.json?t=day">Top (Day)</option>
+                <option value="top.json?t=week">Top (Week)</option>
+                <option value="top.json?t=month">Top (Month)</option>
+                <option value="top.json?t=year">Top (Year)</option>
+                <option value="top.json?t=all">Top (All Time)</option>
+              </select>
               <span class="input-group-addon">reddit.com/r/</span>
               <input
                 type="text"
