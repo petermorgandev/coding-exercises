@@ -1,12 +1,15 @@
 let state = {
-  after: '',
-  posts: [],
-  searchInput: '',
-  subreddit: '',
-  url: '',
+  after: null,
+  posts: null,
+  searchInput: null,
+  subreddit: null,
+  url: null,
+  selectSortBy: null,
+  mode: null,
   getSubredditUrl: function(){
     this.subreddit = this.searchInput.val();
-    this.url = `https://www.reddit.com/r/${this.searchInput.val()}/top.json?t=all`;
+    this.mode = this.selectSortBy.val();
+    this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}`;
   },
   getPosts: async function(){
     await fetch(this.url)
@@ -15,10 +18,9 @@ let state = {
       let {after, children} = json.data;
       this.after = after;
       this.posts = children;
-      this.url += `&after=${this.after}`
     })
   },
-  contentEmbed: function(url){
+  contentEmbed: function(domain, url, embed){
     if (
       url &&
       url.match(/\.(jpg|png|jpeg|bpm|gif)$/)
@@ -37,7 +39,20 @@ let state = {
       <video src="${newURL}" style="max-width: 100%" autoplay loop />
       </div>`;
       return content;
-    }
+    }/* 
+    else if (
+      url &&
+      domain === "gfycat.com"
+    ) {
+      let newURL = url.replace("https://gfycat.com/", "https://gfycat.com/ifr/");
+      newURL += "?autoplay=0";
+      console.log(newURL);
+      content = `
+      <div class="card-image">
+      <iframe src="${newURL}" style="max-width: 100%"/>
+      </div>`;
+      return content;
+    } */
     else {
       return "";
     }
@@ -45,12 +60,12 @@ let state = {
   formatPosts: function(){
     let html = `<div class="columns">`;
     $.each(this.posts, function(i, item) {
-      let {url, id, title, permalink} = item.data;
-      let content = state.contentEmbed(url);
+      let {domain, url, id, title, permalink} = item.data;
+      let content = state.contentEmbed(domain, url, item.data.media_embed.content);
       html += `
         <div class="column col-lg-12 col-xl-6 col-6 mb-2 singlePost" id="${id}">
           <div class="card">
-            ${content}
+            ${content.toString()}
             <div class="card-body">
               <span class="card-title">${title}</span>
             </div>
@@ -67,16 +82,26 @@ let state = {
     event.preventDefault();
     $("#app").html('');
     this.searchInput = $("#searchForm");
+    this.selectSortBy = $("#sortBy");
     this.searchInput.blur();
     await this.getSubredditUrl();
     await this.getPosts();
     this.formatPosts();
-    this.searchInput.val('');
+    if(this.mode === "hot.json" || this.mode === "new.json") {
+      this.url += `?after=${this.after}`;
+    } else {
+      this.url += `&after=${this.after}`;
+    }
   },
   loadMorePosts: async function(){
     if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
       await this.getPosts();
       this.formatPosts();
+      if(this.mode === "hot.json" || this.mode === "new.json") {
+        this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}?after=${this.after}`;
+      } else {
+        this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}&after=${this.after}`;
+      }
     }
   }
 };
