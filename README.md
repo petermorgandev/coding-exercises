@@ -2,15 +2,15 @@
 
 - Here is an example of the JSON you can get for a subreddit
 
-  - https://www.reddit.com/r/aww/hot/.json
-  - https://www.reddit.com/r/aww/new/.json
-  - https://www.reddit.com/r/aww/controversial/.json
-  - https://www.reddit.com/r/aww/top/.json?t=hour
-  - https://www.reddit.com/r/aww/top/.json?t=day
-  - https://www.reddit.com/r/aww/top/.json?t=week
-  - https://www.reddit.com/r/aww/top/.json?t=month
-  - https://www.reddit.com/r/aww/top/.json?t=year
-  - https://www.reddit.com/r/aww/top/.json?t=all
+  - https://www.reddit.com/r/aww/hot.json
+  - https://www.reddit.com/r/aww/new.json
+  - https://www.reddit.com/r/aww/controversial.json
+  - https://www.reddit.com/r/aww/top.json?t=hour
+  - https://www.reddit.com/r/aww/top.json?t=day
+  - https://www.reddit.com/r/aww/top.json?t=week
+  - https://www.reddit.com/r/aww/top.json?t=month
+  - https://www.reddit.com/r/aww/top.json?t=year
+  - https://www.reddit.com/r/aww/top.json?t=all
 
 - To get pagination to work, you need to add options to the URL.
   - For example: https://www.reddit.com/r/aww/top/.json?t=year&count=25&after=t3_9fcjig
