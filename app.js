@@ -58,7 +58,8 @@ let state = {
     $("#app").append(html);
   },
   updateURL: function() {
-    if (this.mode === "hot.json" || this.mode === "new.json") {
+    let condition = this.mode === ("hot.json" || "new.json" || "rising.json");
+    if (condition) {
       this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode
       }?after=${this.after}`;
     } else {
@@ -77,7 +78,8 @@ let state = {
     this.updateURL();
   },
   loadMorePosts: async function() {
-    if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+    let condition = ($(window).scrollTop() + $(window).height() >= $(document).height()) && (this.after !== null);
+    if (condition) {
       await this.getPosts();
       this.formatPosts();
       this.updateURL();
