@@ -1,4 +1,5 @@
 let state = {
+  app: $("#app"),
   after: null,
   posts: null,
   searchInput: null,
@@ -12,13 +13,11 @@ let state = {
     this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}`;
   },
   getPosts: async function() {
-    await fetch(this.url)
-      .then(res => res.json())
-      .then(json => {
-        let { after, children } = json.data;
-        this.after = after;
-        this.posts = children;
-      });
+    const req = await fetch(this.url);
+    const json = await req.json();
+    let { after, children } = json.data;
+    this.after = after;
+    this.posts = children;
   },
   contentEmbed: function(url) {
     if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
@@ -55,11 +54,10 @@ let state = {
         </div>`;
     });
     html += `</div>`;
-    $("#app").append(html);
+    this.app.append(html);
   },
   updateURL: function() {
-    let condition = this.mode === ("hot.json" || "new.json" || "rising.json");
-    if (condition) {
+    if (this.mode === "hot.json" || this.mode === "new.json" || this.mode === "rising.json") {
       this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode
       }?after=${this.after}`;
     } else {
@@ -68,7 +66,7 @@ let state = {
   },
   formSubmit: async function(event) {
     event.preventDefault();
-    $("#app").html("");
+    this.app.html("");
     this.searchInput = $("#searchForm");
     this.selectSortBy = $("#sortBy");
     this.searchInput.blur();
