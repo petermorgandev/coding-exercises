@@ -2,10 +2,10 @@ let state = {
   app: $("#app"),
   after: null,
   posts: null,
-  searchInput: null,
+  searchInput: $("#searchForm"),
   subreddit: null,
   url: null,
-  selectSortBy: null,
+  selectSortBy: $("#sortBy"),
   mode: null,
   getSubredditUrl: function() {
     this.subreddit = this.searchInput.val();
@@ -15,9 +15,8 @@ let state = {
   getPosts: async function() {
     const req = await fetch(this.url);
     const json = await req.json();
-    let { after, children } = json.data;
-    this.after = after;
-    this.posts = children;
+    this.after = json.data.after;
+    this.posts = json.data.children;
   },
   contentEmbed: function(url) {
     if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
@@ -26,13 +25,13 @@ let state = {
         </div>`;
       return content;
     } else if (url && url.match(/\.(gifv)$/)) {
-      let newURL = url.replace(".gifv", ".mp4");
-      content = `<div class="card-image">
-      <video src="${newURL}" style="max-width: 100%" autoplay loop />
-      </div>`;
+        let newURL = url.replace(".gifv", ".mp4");
+        content = `<div class="card-image">
+        <video src="${newURL}" style="max-width: 100%" autoplay loop />
+        </div>`;
       return content;
     } else {
-      return "";
+        return "";
     }
   },
   formatPosts: function() {
@@ -67,8 +66,6 @@ let state = {
   formSubmit: async function(event) {
     event.preventDefault();
     this.app.html("");
-    this.searchInput = $("#searchForm");
-    this.selectSortBy = $("#sortBy");
     this.searchInput.blur();
     await this.getSubredditUrl();
     await this.getPosts();
