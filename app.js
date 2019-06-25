@@ -1,26 +1,33 @@
-const getTextarea = document.getElementById("textarea");
+const listify = {
+  dom: {
+    textBox: document.getElementById("textarea"),
+    indentValue: document.getElementById("indentation"),
+    li: document.getElementById("liOnly"),
+    ul: document.getElementById("ul"),
+    ol: document.getElementById("ol")
+  },
+  addLI: function(isNested) {
+    event.target.blur();
+    const splitArray = listify.dom.textBox.value.split("\n");
+    const { value } = listify.dom.indentValue;
+    return splitArray.map(x => isNested ? `${value}<li>${x}</li>` : `<li>${x}</li>`);
+  },
+  nestList: function(arr, mode) { 
+    return [`<${mode}>`, ...arr, `</${mode}>`];
+  },
+  appendLineBreaks: function(inputArray) {
+    return inputArray.join("\r\n");
+  },
+  basicList: function() {
+    listify.dom.textBox.value = listify.appendLineBreaks(listify.addLI(false));
+  },
+  nestedList: function() {
+    listify.dom.textBox.value = listify.appendLineBreaks(listify.nestList(listify.addLI(true), event.target.id));
+  }
+}
 
-const addLI = isNested => {
-  event.target.blur();
-  const splitArray = getTextarea.value.split("\n");
-  const { value } = document.getElementById("indentation");
-  return splitArray.map(x => isNested ? `${value}<li>${x}</li>` : `<li>${x}</li>`);
-};
+listify.dom.li.addEventListener("click", listify.basicList);
 
-const nestList = (arr, mode) => [`<${mode}>`, ...arr, `</${mode}>`];
+listify.dom.ul.addEventListener("click", listify.nestedList);
 
-const appendLineBreaks = inputArray => inputArray.join("\r\n");
-
-const basicList = () => {
-  getTextarea.value = appendLineBreaks(addLI(false));
-};
-
-const nestedList = () => {
-  getTextarea.value = appendLineBreaks(nestList(addLI(true), event.target.id));
-};
-
-document.getElementById("liOnly").addEventListener("click", basicList);
-
-document.getElementById("ul").addEventListener("click", nestedList);
-
-document.getElementById("ol").addEventListener("click", nestedList);
+listify.dom.ol.addEventListener("click", listify.nestedList);
