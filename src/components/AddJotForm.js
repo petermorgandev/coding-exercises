@@ -9,6 +9,7 @@ class AddJotForm extends Component {
 
   onClick = (e) => {
     e.preventDefault();
+    e.target.blur();
     this.props.addJot(this.state.content);
     this.setState({content: ''});
   }
