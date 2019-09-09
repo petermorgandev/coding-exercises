@@ -3,6 +3,7 @@ let state = {
   after: null,
   posts: null,
   searchInput: $("#searchForm"),
+  searchButton: $("button"),
   subreddit: null,
   url: null,
   selectSortBy: $("#sortBy"),
