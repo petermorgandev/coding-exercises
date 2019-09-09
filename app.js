@@ -21,15 +21,17 @@ let state = {
   },
   contentEmbed: function(url) {
     if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
-      content = `<div class="card-image">
-                  <a href="${url}"><img src="${url}" class="img-responsive" /></a>
-                </div>`;
+      content = `
+        <div class="card-image">
+          <a href="${url}"><img src="${url}" class="img-responsive" /></a>
+        </div>`;
       return content;
     } else if (url && url.match(/\.(gifv)$/)) {
       let newURL = url.replace(".gifv", ".mp4");
-      content = `<div class="card-image">
-                  <video src="${newURL}" style="max-width: 100%" autoplay loop />
-                </div>`;
+      content = `
+        <div class="card-image">
+          <video src="${newURL}" style="max-width: 100%" autoplay loop />
+        </div>`;
       return content;
     } else {
         return "";
@@ -63,22 +65,23 @@ let state = {
       this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}&after=${this.after}`;
     }
   },
+  addPostsToPage: async function() {
+    await this.getPosts();
+    this.formatPosts();
+    this.updateURL();
+  },
   formSubmit: async function(event) {
     event.preventDefault();
     this.app.html("");
     this.searchButton.blur();
     this.searchInput.blur();
-    await this.getSubredditUrl();
-    await this.getPosts();
-    this.formatPosts();
-    this.updateURL();
+    this.getSubredditUrl();
+    await this.addPostsToPage();
   },
   loadMorePosts: async function() {
     let condition = ($(window).scrollTop() + $(window).height() >= $(document).height()) && (this.after !== null);
     if (condition) {
-      await this.getPosts();
-      this.formatPosts();
-      this.updateURL();
+      await this.addPostsToPage();
     }
   }
 };
