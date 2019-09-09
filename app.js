@@ -66,6 +66,7 @@ let state = {
   formSubmit: async function(event) {
     event.preventDefault();
     this.app.html("");
+    this.searchButton.blur();
     this.searchInput.blur();
     await this.getSubredditUrl();
     await this.getPosts();
