@@ -58,8 +58,7 @@ let state = {
   },
   updateURL: function() {
     if (this.mode === "hot.json" || this.mode === "new.json" || this.mode === "rising.json") {
-      this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode
-      }?after=${this.after}`;
+      this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}?after=${this.after}`;
     } else {
       this.url = `https://www.reddit.com/r/${this.subreddit}/${this.mode}&after=${this.after}`;
     }
