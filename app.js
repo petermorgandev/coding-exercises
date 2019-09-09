@@ -22,14 +22,14 @@ let state = {
   contentEmbed: function(url) {
     if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
       content = `<div class="card-image">
-        <a href="${url}"><img src="${url}" class="img-responsive" /></a>
-        </div>`;
+                  <a href="${url}"><img src="${url}" class="img-responsive" /></a>
+                </div>`;
       return content;
     } else if (url && url.match(/\.(gifv)$/)) {
-        let newURL = url.replace(".gifv", ".mp4");
-        content = `<div class="card-image">
-        <video src="${newURL}" style="max-width: 100%" autoplay loop />
-        </div>`;
+      let newURL = url.replace(".gifv", ".mp4");
+      content = `<div class="card-image">
+                  <video src="${newURL}" style="max-width: 100%" autoplay loop />
+                </div>`;
       return content;
     } else {
         return "";
