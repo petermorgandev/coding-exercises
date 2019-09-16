@@ -6,22 +6,22 @@ const listify = {
     ul: document.getElementById("ul"),
     ol: document.getElementById("ol")
   },
-  addLI: function(isNested) {
+  addLI(isNested) {
+    event.preventDefault();
     event.target.blur();
-    const splitArray = listify.dom.textBox.value.split("\n");
-    const { value } = listify.dom.indentValue;
-    return splitArray.map(x => isNested ? `${value}<li>${x}</li>` : `<li>${x}</li>`);
+    const splitArray = this.dom.textBox.value.split("\n");
+    return splitArray.map(x => isNested ? `${this.dom.indentValue.value}<li>${x}</li>` : `<li>${x}</li>`);
   },
-  nestList: function(arr, mode) { 
+  nestList(arr, mode) { 
     return [`<${mode}>`, ...arr, `</${mode}>`];
   },
-  appendLineBreaks: function(inputArray) {
+  appendLineBreaks(inputArray) {
     return inputArray.join("\r\n");
   },
-  basicList: function() {
+  basicList() {
     listify.dom.textBox.value = listify.appendLineBreaks(listify.addLI(false));
   },
-  nestedList: function() {
+  nestedList() {
     listify.dom.textBox.value = listify.appendLineBreaks(listify.nestList(listify.addLI(true), event.target.id));
   }
 }
