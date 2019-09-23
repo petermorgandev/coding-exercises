@@ -19,15 +19,15 @@ const listify = {
     return inputArray.join("\r\n");
   },
   basicList() {
-    listify.dom.textBox.value = listify.appendLineBreaks(listify.addLI(false));
+    this.dom.textBox.value = this.appendLineBreaks(this.addLI(false));
   },
   nestedList() {
-    listify.dom.textBox.value = listify.appendLineBreaks(listify.nestList(listify.addLI(true), event.target.id));
+    this.dom.textBox.value = this.appendLineBreaks(this.nestList(this.addLI(true), event.target.id));
   }
 }
 
-listify.dom.li.addEventListener("click", listify.basicList);
+listify.dom.li.addEventListener("click", () => listify.basicList());
 
-listify.dom.ul.addEventListener("click", listify.nestedList);
+listify.dom.ul.addEventListener("click", () => listify.nestedList());
 
-listify.dom.ol.addEventListener("click", listify.nestedList);
+listify.dom.ol.addEventListener("click", () => listify.nestedList());
