@@ -6,9 +6,9 @@ I often needed to convert text documents into HTML at one of my previous jobs. T
 
 ## Implementations
 
-[jQuery](https://petermorgangh.github.io/listify/jquery/)
-[VanillaJS](https://petermorgangh.github.io/listify/vanillajs/)
-[TypeScript](https://petermorgangh.github.io/listify/typescript/)
+- [jQuery](https://petermorgangh.github.io/listify/jquery/)
+- [VanillaJS](https://petermorgangh.github.io/listify/vanillajs/)
+- [TypeScript](https://petermorgangh.github.io/listify/typescript/)
 
 ## Acknowledgments
 
