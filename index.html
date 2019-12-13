@@ -5,11 +5,12 @@
       rel="stylesheet"
       href="https://unpkg.com/spectre.css/dist/spectre.min.css"
     />
+    <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reddit Gallery (jQuery)</title>
   </head>
 
-  <body>
+  <body class="bg-dark">
     <div class="container grid-lg">
       <div class="columns">
         <div class="column col-12">
@@ -17,10 +18,10 @@
         </div>
       </div>
       <div class="columns">
-        <div class="column col-sm-12 col-md-12 col-lg-10 col-10 mb-2">
+        <div class="column col-sm-12 col-md-12 col-lg-10 col-10">
           <form id="subSearch">
             <div class="input-group">
-              <select class="form-select" id="sortBy">
+              <select class="form-select text-dark" id="sortBy">
                 <option value="hot.json">Hot</option>
                 <option value="new.json">New</option>
                 <option value="rising.json">Rising</option>
@@ -31,10 +32,10 @@
                 <option value="top.json?t=year">Top (Year)</option>
                 <option value="top.json?t=all">Top (All Time)</option>
               </select>
-              <span class="input-group-addon">reddit.com/r/</span>
+              <span class="input-group-addon text-dark">reddit.com/r/</span>
               <input
                 type="text"
-                class="form-input"
+                class="form-input text-dark"
                 placeholder="Enter Subreddit Name"
                 id="searchForm"
               />

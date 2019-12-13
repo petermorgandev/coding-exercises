@@ -21,21 +21,21 @@ let state = {
   },
   contentEmbed: function(url) {
     if (url && url.match(/\.(jpg|png|jpeg|bpm|gif)$/)) {
-      content = `
+      let content = `
         <div class="card-image">
           <a href="${url}"><img src="${url}" class="img-responsive" /></a>
         </div>`;
       return content;
-    } else if (url && url.match(/\.(gifv)$/)) {
+    }
+    if (url && url.match(/\.(gifv)$/)) {
       let newURL = url.replace(".gifv", ".mp4");
-      content = `
+      let content = `
         <div class="card-image">
           <video src="${newURL}" style="max-width: 100%" autoplay loop />
         </div>`;
       return content;
-    } else {
-        return "";
     }
+    return "";
   },
   formatPosts: function() {
     let html = `<div class="columns">`;
@@ -43,14 +43,14 @@ let state = {
       let { url, id, title, permalink } = item.data;
       let content = state.contentEmbed(url);
       html += `
-        <div class="column col-lg-12 col-xl-6 col-6 mb-2 singlePost" id="${id}">
-          <div class="card">
+        <div class="column col-lg-12 col-xl-6 col-6 singlePost" id="${id}">
+          <div class="card bg-dark">
             ${content}
             <div class="card-body">
-              <span class="card-title">${title}</span>
+              <span class="card-title text-light">${title}</span>
             </div>
             <div class="card-footer">
-              <a href="https://www.reddit.com${permalink}" target="_blank">Comments</a>
+              <a href="https://www.reddit.com${permalink}" target="_blank" class="btn btn-sm btn-primary">Comments</a>
             </div>
           </div>
         </div>`;
@@ -80,9 +80,7 @@ let state = {
   },
   loadMorePosts: async function() {
     let condition = ($(window).scrollTop() + $(window).height() >= $(document).height()) && (this.after !== null);
-    if (condition) {
-      await this.addPostsToPage();
-    }
+    if (condition) await this.addPostsToPage();
   }
 };
 
