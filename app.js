@@ -80,7 +80,9 @@ let state = {
   },
   loadMorePosts: async function() {
     let condition = ($(window).scrollTop() + $(window).height() >= $(document).height()) && (this.after !== null);
-    if (condition) await this.addPostsToPage();
+    if (condition) {
+      await this.addPostsToPage();
+    }
   }
 };
 
