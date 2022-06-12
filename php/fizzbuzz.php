@@ -14,6 +14,6 @@ function fizzbuzz($n) {
   }
 }
 
-echo fizzbuzz(30);
+fizzbuzz(30);
 
 ?>
