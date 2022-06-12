@@ -1,9 +1,10 @@
 <?php
 
-function area($r) {
-  return (M_PI * ($r * $r));
+function area_of_circle($r) {
+  $solution = M_PI * pow($r, 2);
+  return round($solution, 2);
 }
 
-echo round(area(2), 2);
+echo area(2);
 
 ?>
