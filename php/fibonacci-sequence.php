@@ -10,10 +10,10 @@ function displayValues($n) {
     for ($i = 2; $i < $n; $i++) {
       $fb[$i] = $fb[$i - 1] + $fb[$i - 2];
     }
-    return $fb;
+    return implode(' ', $fb);
   }
 }
 
-echo implode(displayValues(15), ' ');
+echo displayValues(15);
 
 ?>
