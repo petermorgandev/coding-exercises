@@ -1,0 +1,12 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  border: thin solid $mainColor;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
