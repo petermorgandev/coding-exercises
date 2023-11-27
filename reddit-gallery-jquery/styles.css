@@ -1,0 +1,26 @@
+h1 {
+  margin: 1.5rem 0;
+}
+
+#subSearch,
+.singlePost {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border: 0.0725rem solid #5755d9;
+}
+
+.btn.btn-primary {
+  background: #303742;
+}
+
+.input-group .form-select {
+  -ms-flex: 0.5 1 auto;
+  flex: 0.15 1 auto;
+}
+
+.input-group .form-input {
+  -ms-flex: 0.5 1 auto;
+  flex: 0.5 1 auto;
+}
