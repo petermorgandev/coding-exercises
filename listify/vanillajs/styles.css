@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+h1,
+textarea {
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font-size: 3.5rem;
+}
+textarea {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+}
+button,
+select {
+  display: inline-block;
+  margin-right: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.25rem;
+  color: #fffef9;
+  background-color: #4f4518;
+  border: #fffef9 thin solid;
+}
+button:hover {
+  color: #4f4518;
+  background-color: #fffef9;
+  border: #4f4518 thin solid;
+}
+select {
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  body {
+    max-width: 80%;
+  }
+  select {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+}
