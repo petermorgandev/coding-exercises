@@ -7,18 +7,6 @@ Water Meter is a prototype app built with Vue.js, VueX, and Vue Router. It was c
 
 ## Installing
 
-Clone the GitHub repository
-
-```
-git clone https://github.com/PeterMorganGH/water-meter.git
-```
-
-Change to the directory of the cloned respository
-
-```
-cd 143chars-vue
-```
-
 Install the required packages with npm
 
 ```

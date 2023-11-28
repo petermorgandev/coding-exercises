@@ -16,18 +16,6 @@ You will need to have the base 143chars application and MongoDB running before y
 
 ### Installing
 
-Clone the GitHub repository
-
-```
-git clone https://github.com/PeterMorganGH/143chars-vue.git
-```
-
-Change to the directory of the cloned respository
-
-```
-cd 143chars-vue
-```
-
 Install the required packages with npm
 
 ```

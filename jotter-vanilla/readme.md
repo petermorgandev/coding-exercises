@@ -1,4 +1,4 @@
-Jotter-Vanilla is a Vanilla JavaScript implementation of [Jotter](https://github.com/PeterMorganGH/jotter). You can use it to store small, temporary, notes.
+Jotter-Vanilla is a Vanilla JavaScript implementation of Jotter. You can use it to store small, temporary, notes.
 
 ## Technologies
 

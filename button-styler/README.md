@@ -6,18 +6,6 @@ Button Styler is a Vue.js app for visually styling `<button>` CSS.
 
 ## Installing
 
-Clone the GitHub repository
-
-```
-git clone https://github.com/PeterMorganGH/button-styler.git
-```
-
-Change to the directory of the cloned respository
-
-```
-cd button-styler
-```
-
 Install the required packages with npm
 
 ```
